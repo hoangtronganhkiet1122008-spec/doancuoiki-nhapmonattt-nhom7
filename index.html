@@ -542,35 +542,129 @@ main>section:has(.card[style*="text-align:center"]) .card[style*="text-align:cen
     object-fit: contain;
     display: block;
 }
+.nav-inner {
+    min-height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 22px;
+    flex-wrap: nowrap;
+}
+
+/* Cum logo va ten website */
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+    flex-shrink: 0;
+    color: white;
+}
+
+/* O xanh hien co */
+.brand-mark {
+    width: 44px;
+    min-width: 44px;
+    height: 44px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #8b7cff, #6da8ff);
+    box-shadow: 0 8px 24px rgba(109, 133, 255, .25);
+    text-decoration: none;
+}
+
+/* Xoa mui ten cu */
+.brand-mark::before {
+    content: none !important;
+}
+
+/* Nen trang chua logo */
+.brand-logo-bg {
+    width: 32px;
+    height: 32px;
+    padding: 3px;
+    border-radius: 8px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Anh logo */
+.brand-logo-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* Ten CareerSense */
+.brand-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+    min-width: 0;
+    color: white;
+    text-decoration: none;
+    white-space: nowrap;
+    line-height: 1.2;
+}
+
+.brand-text span {
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 1.35;
+}
+
+.brand-text small {
+    font-size: 9px;
+    color: #aeb9d2;
+    letter-spacing: 1.6px;
+    font-weight: 600;
+}
 </style>
 </head>
 <body>
   <nav class="nav">
-    <div class="container nav-inner">
-     <div class="brand">
-    <a class="brand-mark"
-       href="https://hcmute.edu.vn/"
-       target="_blank"
-       rel="noopener noreferrer">
+  <div class="container nav-inner">
+
+    <div class="brand">
+      <!-- Logo truong: bam vao de mo website truong -->
+      <a class="brand-mark"
+         href="https://hcmute.edu.vn/"
+         target="_blank"
+         rel="noopener noreferrer"
+         title="Website của trường">
+
         <div class="brand-logo-bg">
-            <img src="./images/images.png" alt="Logo trường">
+          <img src="./images/images.png" alt="Logo trường">
         </div>
-    <div class="brand-text">
+      </a>
+
+      <!-- Ten website: bam de quay ve dau trang -->
+      <a class="brand-text" href="#home">
         <span>CareerSense</span>
         <small>Ý THỨC NGHỀ NGHIỆP CỦA SINH VIÊN</small>
+      </a>
     </div>
-</a>
-      <div class="menu">
-        <a href="#khainiem">Nguyên nhân chọn đề tài</a>
-        <a href="#thuctrang">Thực trạng</a>
-        <a href="#bieuhien">Biểu hiện</a>
-        <a href="#yeuto">Yếu tố</a>
-        <a href="#giaiphap">Giải pháp</a>
-        <a href="#khaosat">Khảo sát</a>
-        <a href="#nguon">Nguồn</a>
-      </div>
+
+    <div class="menu">
+      <a href="#khainiem">Nguyên nhân chọn đề tài</a>
+      <a href="#thuctrang">Thực trạng</a>
+      <a href="#bieuhien">Biểu hiện</a>
+      <a href="#yeuto">Yếu tố</a>
+      <a href="#giaiphap">Giải pháp</a>
+      <a href="#khaosat">Khảo sát</a>
+      <a href="#nguon">Nguồn</a>
     </div>
-  </nav>
+
+  </div>
+</nav>
 
   <header id="home" class="hero">
     <div class="container hero-grid">
@@ -603,11 +697,7 @@ main>section:has(.card[style*="text-align:center"]) .card[style*="text-align:cen
       </aside>
     </div>
   </header>
-
   <main>
-
-
-
     <section id="khainiem">
       <div class="container">
         <div class="reason-layout">
