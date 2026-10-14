@@ -212,25 +212,8 @@ body{background:var(--bg);color:var(--text);font-family:"Be Vietnam Pro",Inter,s
 .container{width:min(1240px,calc(100% - 42px));margin-inline:auto}
 .nav{position:sticky;top:0;z-index:1000;background:rgba(11,16,32,.92);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.09)}
 .nav-inner{min-height:76px;gap:22px}
-.brand-mark:before{content:}
 .brand{color:#fff;min-width:210px}
 .brand-mark{min-width:44px;width:44px;height:44px;padding:0;border-radius:15px;background:linear-gradient(135deg,#8b7cff,#6da8ff);color:#0b1020;font-size:20px;box-shadow:0 8px 24px rgba(109,133,255,.25)}
-.brand-logo-bg {
-    width: 32px;
-    height: 32px;
-    padding: 4px;
-    background: #fff;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.brand-logo-bg img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    display: block;
-}
 .brand-text span{font-size:16px;line-height:1.35;letter-spacing:-.3px}
 .brand-text small{font-size:9px;color:#aeb9d2;letter-spacing:1.6px;margin-top:4px}
 .menu{gap:3px;flex-wrap:wrap}
@@ -524,22 +507,58 @@ main>section:has(.card[style*="text-align:center"]) .card[style*="text-align:cen
   .photo-placeholder strong{font-size:10px}
   .photo-placeholder small{font-size:9px}
 }
+.nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
 
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.brand-mark::before {
+    content: none !important;
+}
+
+.brand-logo-bg {
+    width: 32px;
+    height: 32px;
+    padding: 4px;
+    background: white;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.brand-logo-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
 </style>
 </head>
 <body>
   <nav class="nav">
     <div class="container nav-inner">
       <a class="brand" href="#home">
-        <div class="brand-mark">
-          <div class="brand-logo-bg">
-           <img src="images/images.png" alt="Logo trường">
-          </div>
-        <div class="brand-text">
-          <span>ĐỒ ÁN CUỐI KÌ</span>
-          <small>Ý THỨC NGHỀ NGHIỆP CỦA SINH VIÊN</small>
+    <div class="brand-mark">
+        <div class="brand-logo-bg">
+            <img src="./images/logo-truong.png" alt="Logo trường">
         </div>
-      </a>
+    </div>
+
+    <div class="brand-text">
+        <span>CareerSense</span>
+        <small>Ý THỨC NGHỀ NGHIỆP CỦA SINH VIÊN</small>
+    </div>
+</a>
       <div class="menu">
         <a href="#khainiem">Nguyên nhân chọn đề tài</a>
         <a href="#thuctrang">Thực trạng</a>
