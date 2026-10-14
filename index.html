@@ -1,0 +1,1304 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ý thức nghề nghiệp của sinh viên</title>
+  <meta name="description" content="Website báo cáo nghiên cứu về ý thức nghề nghiệp của sinh viên, tích hợp kết quả khảo sát cập nhật." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#f6f8fc;
+      --card:#ffffff;
+      --text:#172033;
+      --muted:#63708a;
+      --primary:#3157d5;
+      --primary2:#6b4ce6;
+      --accent:#15a982;
+      --warning:#f59e0b;
+      --danger:#e45c6d;
+      --line:#e6eaf2;
+      --shadow:0 14px 40px rgba(30,45,85,.10);
+      --radius:22px;
+    }
+    *{box-sizing:border-box;scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+      color:var(--text);
+      background:linear-gradient(180deg,#ffffff 0,#799bdf 100%);
+      line-height:1.65;
+    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%}
+    .container{width:min(1600px,96%);margin:auto}
+    .nav{
+      position:sticky;top:0;z-index:1000;
+      backdrop-filter:blur(16px);
+      background:rgba(255,255,255,.86);
+      border-bottom:1px solid rgba(230,234,242,.85);
+    }
+    .nav-inner{
+      min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:20px;
+    }
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800}
+    .brand-mark{
+      min-width:100px;height:42px;padding:0 12px;border-radius:13px;display:grid;place-items:center;
+      background:linear-gradient(135deg,var(--primary),var(--primary2));color:#fff;font-size:15px;
+      letter-spacing:.4px;box-shadow:0 8px 20px rgba(49,87,213,.25);white-space:nowrap;
+    }
+    .brand-text{display:flex;flex-direction:column;line-height:1.1}
+    .brand-text span {
+      display:block;
+      font-size:24px;
+      font-weight:bold;
+      letter-spacing:.2px;
+    }
+    .brand-text small {
+      display:block;
+      color:var(--muted);
+      font-size:16px;
+      font-weight:600;
+      letter-spacing:.5px;
+    }
+    .menu {
+     display: flex;
+     align-items: center;
+     gap: 2px;
+     flex-wrap: nowrap;
+     justify-content: flex-end;
+    }
+
+    .menu a {
+     padding: 8px 7px;
+     border-radius: 10px;
+     font-size: 11px;
+     font-weight: 700;
+     white-space: nowrap;
+     color: #46516a;
+    }
+    .menu a:hover{background:#eef2ff;color:var(--primary)}
+    .hero{
+      padding:90px 0 65px;
+      background:
+        radial-gradient(circle at 15% 20%,rgba(49,87,213,.15),transparent 28%),
+        radial-gradient(circle at 90% 10%,rgba(107,76,230,.13),transparent 27%),
+        linear-gradient(135deg,#f9fbff 0,#edf2ff 100%);
+      overflow:hidden;
+    }
+    .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:45px;align-items:center}
+    .eyebrow{
+      display:inline-flex;padding:7px 12px;border-radius:999px;background:#e9efff;
+      color:var(--primary);font-size:12px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;
+    }
+    h1{font-size:clamp(42px,6vw,74px);line-height:1.03;margin:18px 0 20px;letter-spacing:-2px}
+    .hero h1 span{background:linear-gradient(90deg,var(--primary),var(--primary2));background-clip:text;-webkit-background-clip:text;color:transparent}
+    .hero p{font-size:18px;color:var(--muted);max-width:720px}
+    .quote{
+      margin:24px 0;padding:18px 22px;border-left:4px solid var(--primary);
+      background:rgba(255,255,255,.8);border-radius:0 18px 18px 0;font-size:19px;font-weight:700;
+    }
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+    .btn{
+      display:inline-flex;align-items:center;gap:8px;border:0;border-radius:14px;padding:12px 17px;
+      font-weight:800;cursor:pointer;transition:.2s;box-shadow:0 8px 20px rgba(25,40,80,.08)
+    }
+    .btn-primary{background:linear-gradient(135deg,var(--primary),var(--primary2));color:white}
+    .btn-secondary{background:white;color:#34415d;border:1px solid var(--line)}
+    .btn:hover{transform:translateY(-2px)}
+    .hero-card{background:rgba(255,255,255,.84);border:1px solid rgba(255,255,255,.7);border-radius:30px;padding:26px;box-shadow:var(--shadow)}
+    .hero-card h3{margin-top:0}
+    .formula{display:grid;gap:11px;margin:22px 0}
+    .formula .item{
+      padding:15px 16px;border:1px solid var(--line);border-radius:16px;background:#fff;font-weight:750
+    }
+    .formula .item span{display:inline-block;width:32px;height:32px;border-radius:10px;background:#edf1ff;color:var(--primary);text-align:center;line-height:32px;margin-right:8px}
+    section{padding:76px 0}
+    .section-head{max-width:840px;margin-bottom:34px}
+    .section-head .label{color:var(--primary);font-weight:850;font-size:12px;letter-spacing:1px;text-transform:uppercase}
+    h2{font-size:clamp(30px,4vw,46px);line-height:1.15;margin:7px 0 13px;letter-spacing:-1px}
+    .section-head p{color:var(--muted);font-size:17px;margin:0}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .card{
+      background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+      padding:25px;box-shadow:0 8px 30px rgba(31,45,80,.05)
+    }
+    .card h3{margin:0 0 10px;font-size:20px}
+    .card p{color:var(--muted);margin:0}
+    .icon{
+      width:46px;height:46px;border-radius:15px;background:#edf1ff;color:var(--primary);
+      display:grid;place-items:center;font-size:21px;margin-bottom:14px
+    }
+    .stat{
+      text-align:center;padding:26px 18px;background:#fff;border:1px solid var(--line);border-radius:20px;
+      box-shadow:0 8px 26px rgba(25,40,80,.05)
+    }
+    .stat strong{display:block;font-size:36px;line-height:1;color:var(--primary);margin-bottom:8px}
+    .stat span{color:var(--muted);font-size:13px;font-weight:700}
+    .note{
+      padding:15px 18px;border-radius:15px;background:#fff8e8;border:1px solid #fde3a7;color:#75510a;
+      font-size:14px
+    }
+    .compare{overflow:hidden;border:1px solid var(--line);border-radius:22px;background:#fff}
+    .compare-grid{display:grid;grid-template-columns:1fr 1fr}
+    .compare-col{padding:25px}
+    .compare-col:first-child{border-right:1px solid var(--line)}
+    .compare-col h3{margin-top:0}
+    .good h3{color:var(--accent)}
+    .bad h3{color:var(--danger)}
+    .compare-col div{padding:11px 0;border-bottom:1px dashed var(--line)}
+    .compare-col div:last-child{border-bottom:0}
+    .bar-chart{display:grid;gap:15px}
+    .bar-row{display:grid;grid-template-columns:180px 1fr 60px;gap:12px;align-items:center}
+    .bar-label{font-weight:700;font-size:14px}
+    .bar{height:14px;background:#edf0f6;border-radius:99px;overflow:hidden}
+    .fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--primary),var(--primary2))}
+    .percent{text-align:right;font-weight:800;color:var(--primary)}
+    .timeline{position:relative;display:grid;gap:18px}
+    .timeline:before{content:"";position:absolute;left:21px;top:15px;bottom:15px;width:2px;background:#dfe5f1}
+    .step{position:relative;display:grid;grid-template-columns:44px 1fr;gap:15px;align-items:start}
+    .step-num{
+      width:44px;height:44px;border-radius:14px;background:linear-gradient(135deg,var(--primary),var(--primary2));
+      color:white;display:grid;place-items:center;font-weight:900;position:relative;z-index:1
+    }
+    .step-box{background:#fff;border:1px solid var(--line);padding:18px 19px;border-radius:18px}
+    .step-box h4{margin:0 0 4px}
+    .step-box p{margin:0;color:var(--muted)}
+    .pill{display:inline-flex;border-radius:999px;padding:5px 9px;background:#eef5f2;color:#16765b;font-size:12px;font-weight:800}
+    .quiz-wrap{display:grid;grid-template-columns:1fr .8fr;gap:22px;align-items:start}
+    .quiz-question{font-size:19px;font-weight:800;margin-bottom:18px}
+    .option{
+      width:100%;text-align:left;background:#fff;border:1px solid var(--line);border-radius:15px;
+      padding:14px 15px;margin:8px 0;cursor:pointer;font:inherit;font-weight:700;color:#33405b
+    }
+    .option:hover{border-color:#aebcf3;background:#f8f9ff}
+    .option.correct{background:#eefbf7;border-color:#9bdcc8}
+    .option.wrong{background:#fff0f2;border-color:#efb0ba}
+    .quiz-result{padding:20px;border-radius:18px;background:linear-gradient(135deg,#f1f5ff,#faf7ff);border:1px solid #dce3fb}
+    .sources a{color:var(--primary);font-weight:700;text-decoration:underline}
+    .sources li{margin-bottom:10px}
+    .footer{padding:45px 0 70px;border-top:1px solid var(--line);background:#fff}
+    .footer-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:35px}
+    .small{font-size:13px;color:var(--muted)}
+    .back-top{position:fixed;right:22px;bottom:22px;width:45px;height:45px;border:0;border-radius:14px;background:#172033;color:#fff;cursor:pointer;box-shadow:var(--shadow);display:none}
+    .back-top.show{display:block}
+    @media (max-width:900px){
+      .hero-grid,.grid-2,.quiz-wrap,.footer-grid{grid-template-columns:1fr;width: 100%;margin: auto}
+      .grid-3{grid-template-columns:1fr 1fr}
+      .grid-4{grid-template-columns:1fr 1fr}
+      .menu{display:none}
+    }
+    @media (max-width:620px){
+      h1{letter-spacing:-1px}
+      .grid-3,.grid-4,.compare-grid{grid-template-columns:1fr}
+      .compare-col:first-child{border-right:0;border-bottom:1px solid var(--line)}
+      .bar-row{grid-template-columns:1fr}
+      .percent{text-align:left}
+      section{padding:58px 0}
+    }
+  
+/* ===== CAREERSENSE MODERN REFRESH ===== */
+:root{
+ --bg:#f5f7fc;--card:#ffffff;--text:#121a2d;--muted:#65718a;
+ --primary:#7165e8;--primary2:#4d8ef7;--accent:#5de0bc;--warning:#f4bc63;
+ --danger:#e76583;--line:#e5e9f2;--shadow:0 18px 55px rgba(25,35,75,.09);--radius:24px;
+}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{background:var(--bg);color:var(--text);font-family:"Be Vietnam Pro",Inter,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.75}
+.container{width:min(1240px,calc(100% - 42px));margin-inline:auto}
+.nav{position:sticky;top:0;z-index:1000;background:rgba(11,16,32,.92);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.09)}
+.nav-inner{min-height:76px;gap:22px}
+.brand{color:#fff;min-width:210px}
+.brand-mark{min-width:44px;width:44px;height:44px;padding:0;border-radius:15px;background:linear-gradient(135deg,#8b7cff,#6da8ff);color:#0b1020;font-size:20px;box-shadow:0 8px 24px rgba(109,133,255,.25)}
+.brand-mark:before{content:"↗"}
+.brand-text span{font-size:16px;line-height:1.35;letter-spacing:-.3px}
+.brand-text small{font-size:9px;color:#aeb9d2;letter-spacing:1.6px;margin-top:4px}
+.menu{gap:3px;flex-wrap:wrap}
+.menu a{font-size:11px;padding:9px 10px;color:#c6cee2;border-radius:10px}
+.menu a:hover{background:rgba(255,255,255,.09);color:#fff}
+.hero{position:relative;padding:92px 0 78px;overflow:hidden;color:#fff;background:radial-gradient(ellipse at 80% 12%,rgba(139,124,255,.25),transparent 33%),radial-gradient(ellipse at 5% 90%,rgba(93,224,188,.12),transparent 28%),#0b1020}
+.hero:before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.14;background-image:radial-gradient(rgba(255,255,255,.55) .7px,transparent .7px);background-size:21px 21px;mask-image:linear-gradient(90deg,transparent,#000)}
+.hero-grid{position:relative;z-index:1;grid-template-columns:1.15fr .85fr;gap:60px}
+.hero .eyebrow{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.13);color:#b9f5e5;font-size:10px;letter-spacing:1.5px}
+h1{font-size:clamp(43px,6vw,76px);line-height:1.1;letter-spacing:-2.7px;margin:22px 0}
+.hero h1 span{background:linear-gradient(100deg,#fff 3%,#bdb6ff 52%,#76edcf 100%);background-clip:text;-webkit-background-clip:text;color:transparent}
+.hero p{font-size:16px;color:#b9c3da;max-width:680px}
+.quote{border:1px solid rgba(255,255,255,.12);border-left:3px solid var(--accent);background:rgba(255,255,255,.055);border-radius:0 16px 16px 0;color:#edf1ff;font-size:15px;font-weight:600;padding:16px 19px}
+.hero .btn{font-size:13px;border-radius:13px;padding:13px 17px}
+.btn-primary{background:linear-gradient(135deg,#8b7cff,#78b6ff);color:#0b1020;box-shadow:0 10px 26px rgba(109,133,255,.22)}
+.btn-secondary{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.15);color:#fff}
+.hero-card{background:linear-gradient(145deg,rgba(255,255,255,.105),rgba(255,255,255,.035));border:1px solid rgba(255,255,255,.14);border-radius:28px;padding:27px;color:#fff;box-shadow:0 28px 80px rgba(0,0,0,.2)}
+.hero-card h3{color:#fff}
+.hero-card p{color:#b7c3dc}
+.formula .item{background:rgba(255,255,255,.055);border-color:rgba(255,255,255,.1);color:#f0f2ff}
+.formula .item span{background:linear-gradient(135deg,#8b7cff,#5de0bc);color:#10172a}
+section{padding:78px 0}
+section:nth-of-type(even){background:#eef1fa}
+.section-head{margin-bottom:28px}
+.section-head .label,.label{display:inline-flex;align-items:center;border-radius:999px;background:#eceaff;color:#6154d8;padding:6px 11px;font-size:10px;font-weight:850;letter-spacing:1.4px;text-transform:uppercase}
+h2{font-size:clamp(30px,4vw,44px);line-height:1.2;letter-spacing:-1.4px;margin:13px 0}
+.section-head>p{max-width:950px;color:var(--muted)}
+.card{background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:0 8px 28px rgba(25,35,75,.035);padding:24px;transition:transform .22s,box-shadow .22s}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.card h3{line-height:1.4}
+.grid-4{gap:17px}
+.icon{border-radius:15px;background:#efedff;color:#5d50d5}
+.note{border-radius:16px;background:#f0f2ff;border:1px solid #e0e4ff;padding:15px 18px}
+.pill{border-radius:999px;background:#eeecff;color:#5d50d5;font-size:11px;padding:6px 10px}
+.option{width:100%;text-align:left;border:1px solid var(--line);border-radius:13px;background:#fff;padding:12px 14px;margin:7px 0;cursor:pointer;transition:.18s}
+.option:hover{border-color:#8b7cff;background:#f6f4ff;transform:translateX(2px)}
+.footer{background:#0b1020;color:#fff;padding:38px 0}
+.footer .small{color:#aeb9d2}
+.footer .pill{background:rgba(93,224,188,.12);color:#6ce8c7}
+.back-top{background:linear-gradient(135deg,#8b7cff,#6da8ff);color:#0b1020;border:0;border-radius:15px;box-shadow:var(--shadow)}
+.back-top.show{display:block}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #8b7cff;outline-offset:3px}
+@media(max-width:1000px){
+ .nav-inner{align-items:center;flex-wrap:wrap;padding:12px 0}
+ .menu{justify-content:flex-start}
+ .hero-grid{grid-template-columns:1fr;gap:30px}
+ .hero-card{max-width:650px}
+ .brand{min-width:0}
+}
+@media(max-width:680px){
+ .container{width:calc(100% - 28px)}
+ .nav-inner{gap:10px}
+ .brand-text span{font-size:13px}.brand-text small{font-size:8px}
+ .menu{width:100%;overflow-x:auto;flex-wrap:nowrap;justify-content:flex-start;padding-bottom:3px}
+ .menu a{flex:0 0 auto}
+ .hero{padding:62px 0 54px}
+ h1{letter-spacing:-1.8px}
+ section{padding:58px 0}
+ .grid-4{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .hero-card{padding:20px}
+}
+@media(max-width:430px){.grid-4{grid-template-columns:1fr}.hero-actions .btn{width:100%;justify-content:center}}
+/* Survey dashboard */
+#khaosat{background:#0b1020!important;color:#fff;position:relative;overflow:hidden}
+#khaosat:before{content:"";position:absolute;right:-140px;top:-160px;width:430px;height:430px;border-radius:50%;background:rgba(139,124,255,.13);filter:blur(5px);pointer-events:none}
+#khaosat .container{position:relative;z-index:1}
+#khaosat .section-head>p{color:#b3bfd8}
+#khaosat h2{color:#fff}
+#khaosat .label{background:rgba(93,224,188,.12);color:#75e8cd}
+#khaosat .card{background:#151d35;border-color:rgba(255,255,255,.1);color:#fff;box-shadow:none}
+#khaosat .card p{color:#b5c0d8}
+.survey-kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:26px 0}
+.survey-kpi{padding:20px;border:1px solid rgba(255,255,255,.11);background:rgba(255,255,255,.055);border-radius:19px}
+.survey-kpi span{display:block;color:#aab7d2;font-size:11px;font-weight:700}
+.survey-kpi strong{display:block;color:#fff;font-size:30px;line-height:1.25;letter-spacing:-1px;margin:6px 0}
+.survey-kpi small{font-size:10px;color:#7be7cd}
+.survey-layout{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:18px;align-items:start}
+.survey-panel{padding:24px;border:1px solid rgba(255,255,255,.12);background:#151d35;border-radius:23px;min-width:0}
+.survey-panel h3{margin:0 0 8px;font-size:18px}
+.survey-muted{font-size:12px;color:#aab7d2}
+.survey-controls{display:grid;gap:12px;margin-top:18px}
+.survey-controls label{font-size:11px;color:#c4cde1;font-weight:800}
+.survey-controls select{width:100%;min-width:0;padding:12px 13px;border-radius:12px;border:1px solid #35405f;background:#0f172d;color:#fff;font:inherit;font-size:12px}
+.survey-btn{border:0;border-radius:12px;padding:12px 14px;background:linear-gradient(135deg,#8b7cff,#6da8ff);color:#0b1020;font-weight:850;font-size:12px;cursor:pointer}
+.survey-btn.alt{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.13);color:#fff}
+.survey-btn:disabled{opacity:.5;cursor:not-allowed}
+.survey-status{font-size:11px;line-height:1.6;padding:11px 12px;border-radius:12px;background:rgba(93,224,188,.08);border:1px solid rgba(93,224,188,.18);color:#9aefd9}
+.survey-status.error{background:rgba(231,101,131,.1);border-color:rgba(231,101,131,.2);color:#ffb5c5}
+.survey-chart-head{display:flex;justify-content:space-between;gap:14px;align-items:flex-start;margin-bottom:18px}
+.survey-chart-head small{font-size:10px;color:#aab7d2}
+.survey-bars{display:grid;gap:15px}
+.survey-bar-row{min-width:0}
+.survey-bar-label{display:flex;justify-content:space-between;gap:14px;font-size:12px;margin-bottom:7px}
+.survey-bar-label strong{font-weight:700;overflow-wrap:anywhere}
+.survey-bar-label span{white-space:nowrap;color:#80edd2;font-weight:800}
+.survey-track{height:9px;background:#2b3551;border-radius:99px;overflow:hidden}
+.survey-track span{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,#8b7cff,#5de0bc);transition:width .35s}
+.survey-insight{margin-top:20px;padding:16px;border-radius:16px;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.08);color:#dfe5f5;font-size:12px}
+.survey-insight b{color:#7be7cd}
+.survey-chart-note{font-size:10px;color:#8f9dbb;margin-top:14px}
+.survey-form-link{display:block;text-align:center;text-decoration:none}
+.survey-controls .survey-status{margin-top:2px}
+@media(max-width:850px){.survey-layout{grid-template-columns:1fr}.survey-kpis{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:430px){.survey-kpi{padding:15px}.survey-kpi strong{font-size:25px}.survey-panel{padding:17px}.survey-chart-head{flex-direction:column}}
+
+/* ===== POLISH ALL CONTENT SECTIONS ===== */
+main{overflow:hidden}
+main>section{position:relative;isolation:isolate}
+main>section:not(#khaosat)::before{content:"";position:absolute;z-index:-1;pointer-events:none;right:-150px;top:10%;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(113,101,232,.07),transparent 70%)}
+main>section:nth-of-type(odd):not(#khaosat){background:linear-gradient(180deg,#f8f9ff 0%,#eef1fa 100%)!important}
+main>section:nth-of-type(even):not(#khaosat){background:#fff!important}
+.section-head{position:relative;padding-left:18px;border-left:3px solid #8b7cff}
+.section-head .label{letter-spacing:1.35px}
+.section-head h2{max-width:900px}
+.section-head>p{line-height:1.9}
+.card,.stat,.compare,.step-box,.quiz-result{position:relative;overflow:hidden}
+.card:focus-within,.card:hover{border-color:#d8d5ff}
+.grid-4>.card,.grid-3>.card,.grid-2>.card{min-height:100%}
+.grid-4>.card:before,.grid-3>.card:before{content:"";position:absolute;left:0;top:0;width:100%;height:3px;background:linear-gradient(90deg,#8b7cff,#5de0bc);opacity:.8}
+.icon{width:48px;height:48px;font-size:20px;box-shadow:inset 0 0 0 1px rgba(113,101,232,.07)}
+#khainiem .card[style*="linear-gradient"]{background:linear-gradient(135deg,#f1f4ff,#f7f2ff)!important;border:1px solid #e0e2ff!important;box-shadow:0 16px 35px rgba(78,82,150,.07)}
+#khainiem .card[style*="margin-top"]{border-left:3px solid #8b7cff}
+.stat{text-align:left;background:linear-gradient(145deg,#fff,#f7f8ff);padding:25px 22px;border-radius:22px;transition:transform .2s,box-shadow .2s}
+.stat:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.stat strong{font-size:clamp(27px,3vw,38px);letter-spacing:-1.4px;background:linear-gradient(100deg,#6658de,#438ee9);background-clip:text;-webkit-background-clip:text;color:transparent}
+.stat span{display:block;line-height:1.55;max-width:230px}
+#thuctrang .grid-2 .card{background:linear-gradient(145deg,#fff,#fafaff)}
+#thuctrang .grid-2 .card h3{display:flex;align-items:center;gap:9px}
+#thuctrang .grid-2 .card h3:before{content:"";width:8px;height:25px;border-radius:99px;background:linear-gradient(#8b7cff,#5de0bc)}
+.compare{border:1px solid #e3e6f2;border-radius:24px;box-shadow:0 18px 45px rgba(25,35,75,.06)}
+.compare-grid{gap:0}
+.compare-col{padding:clamp(20px,3vw,32px)}
+.compare-col:first-child{background:linear-gradient(160deg,#f1fcf8,#fff);border-right:1px solid #e4eee9}
+.compare-col:last-child{background:linear-gradient(160deg,#fff4f6,#fff)}
+.compare-col h3{display:flex;align-items:center;gap:10px;font-size:19px;margin-bottom:12px}
+.compare-col div{display:flex;gap:10px;align-items:flex-start;padding:12px 0;line-height:1.65;font-size:14px}
+.good div:before{content:"✓";flex:0 0 22px;width:22px;height:22px;display:grid;place-items:center;border-radius:8px;background:#d9f7ec;color:#168565;font-size:12px;font-weight:900}
+.bad div:before{content:"×";flex:0 0 22px;width:22px;height:22px;display:grid;place-items:center;border-radius:8px;background:#ffe1e7;color:#c84866;font-size:14px;font-weight:900}
+#yeuto .grid-3 .card{padding-top:28px}
+#yeuto .grid-3 .card:nth-child(2n){background:linear-gradient(145deg,#fff,#f8f7ff)}
+.timeline{gap:15px;margin:6px 0}
+.timeline:before{left:22px;top:25px;bottom:25px;width:2px;background:linear-gradient(#8b7cff,#5de0bc)}
+.step{grid-template-columns:46px 1fr;gap:15px}
+.step-num{width:46px;height:46px;border-radius:16px;background:linear-gradient(135deg,#7868ec,#4d9df0);box-shadow:0 8px 18px rgba(103,92,221,.2);font-size:13px}
+.step-box{padding:19px 22px;border-radius:18px;box-shadow:0 7px 22px rgba(25,35,75,.035);transition:transform .2s,border-color .2s}
+.step-box:hover{transform:translateX(4px);border-color:#d6d2ff}
+.step-box h4{font-size:16px}
+.step-box p{font-size:14px;line-height:1.8}
+#giaiphap .card[style*="margin-top"]{background:linear-gradient(135deg,#f2f3ff,#effbf8);border-color:#e0e4f4}
+#khaosat{padding-top:88px;padding-bottom:88px}
+#quiz .quiz-wrap>.card{padding:clamp(20px,3vw,30px);box-shadow:0 18px 42px rgba(25,35,75,.06)}
+#quiz .quiz-result{border-radius:23px;padding:26px;background:linear-gradient(145deg,#eeedff,#e9f9f5);border:1px solid #dedcff;position:sticky;top:100px}
+#quiz .quiz-result h3{font-size:20px}
+#score{letter-spacing:-1.5px;margin:15px 0;color:#6658de!important}
+.option{display:flex;align-items:center;gap:10px;min-height:52px;line-height:1.6}
+.option.correct{background:#e9fbf4;border-color:#9bdcc8;color:#176d57}
+.option.wrong{background:#fff0f3;border-color:#efb0ba;color:#a83752}
+/* Model section */
+main>section:has(.grid-4 .card .icon):has(.card[style*="text-align:center"]) .grid-4 .card{background:#fff}
+main>section:has(.card[style*="text-align:center"]) .card[style*="text-align:center"]{padding:clamp(22px,4vw,38px);border:1px solid #dedfff!important;border-radius:25px;background:radial-gradient(circle at 5% 0,rgba(139,124,255,.12),transparent 35%),linear-gradient(135deg,#f3f3ff,#effbf8)!important}
+main>section:has(.card[style*="text-align:center"]) .card[style*="text-align:center"] div{font-size:clamp(14px,2vw,21px)!important;line-height:1.9}
+main>section:has(.card[style*="text-align:center"]) .card[style*="text-align:center"] p{color:#626d87;font-weight:600}
+#nguon .sources{padding:clamp(20px,3vw,34px);background:linear-gradient(145deg,#fff,#fafaff)}
+.sources ol{padding-left:24px;counter-reset:source}
+.sources li{padding:0 0 17px 5px;margin-bottom:16px;border-bottom:1px solid #edf0f6;line-height:1.8}
+.sources li:last-child{border-bottom:0}
+.sources li::marker{color:#7668e9;font-weight:900}
+.sources a{display:inline-flex;align-items:center;gap:5px;margin-left:5px;padding:4px 9px;border-radius:8px;background:#efedff;color:#5b4fd0;text-decoration:none;font-size:12px;white-space:nowrap}
+.sources a:hover{background:#dedbff}
+#nguon .note{margin-top:22px;background:#f0fbf7;border-color:#d3f3e8;color:#326c5e;line-height:1.8}
+.footer{position:relative;overflow:hidden;background:radial-gradient(ellipse at 90% 0,rgba(113,101,232,.24),transparent 35%),#0b1020;border-top:1px solid rgba(255,255,255,.1)}
+.footer:before{content:"";position:absolute;left:0;top:0;width:100%;height:3px;background:linear-gradient(90deg,#8b7cff,#5de0bc,#6da8ff)}
+.footer-grid{align-items:start}
+.footer h3{font-size:19px;letter-spacing:-.3px}
+.footer .small{line-height:1.9;max-width:650px}
+.footer .pill{padding:7px 12px;letter-spacing:.6px}
+.back-top{width:48px;height:48px;font-size:20px;transition:transform .2s}
+.back-top:hover{transform:translateY(-4px)}
+@media(max-width:850px){
+ .survey-kpis{grid-template-columns:repeat(2,minmax(0,1fr))}
+ #quiz .quiz-result{position:static}
+ .compare-col{padding:22px}
+}
+@media(max-width:620px){
+ .section-head{padding-left:13px}
+ .stat{padding:19px 16px}
+ .stat span{font-size:12px}
+ .compare-col h3{font-size:16px}
+ .compare-col div{font-size:13px}
+ .step{grid-template-columns:39px 1fr;gap:11px}
+ .step-num{width:39px;height:39px;border-radius:13px}
+ .timeline:before{left:18px}
+ .step-box{padding:16px}
+ #khaosat{padding-top:62px;padding-bottom:62px}
+ .sources li{font-size:14px}
+ .footer-grid{gap:18px}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
+
+
+/* ===== ANH KHAO SAT THUC TE - REASON SECTION ===== */
+.reason-layout{
+  display:grid;
+  grid-template-columns:minmax(0,1.22fr) minmax(320px,.78fr);
+  gap:32px;
+  align-items:start;
+  margin-bottom:38px;
+}
+.reason-layout .section-head{max-width:none;margin-bottom:0;min-width:0}
+.survey-photo-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);
+  grid-template-rows:repeat(2,minmax(150px,1fr));
+  gap:12px;
+  min-width:0;
+}
+.survey-photo{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  min-width:0;
+  min-height:150px;
+  margin:0;
+  border-radius:22px;
+  border:1px solid rgba(255,255,255,.82);
+  background:linear-gradient(145deg,#e9edff 0%,#e8f8f4 52%,#f6efff 100%);
+  box-shadow:0 12px 30px rgba(40,49,100,.12);
+}
+.survey-photo:first-child{grid-row:1 / span 2;min-height:315px}
+.survey-photo img{
+  position:absolute;inset:0;width:100%;height:100%;max-width:none;
+  object-fit:cover;display:block;z-index:1;transition:transform .45s ease;
+}
+.survey-photo:hover img{transform:scale(1.035)}
+.survey-photo:after{
+  content:"";position:absolute;inset:35% 0 0;z-index:2;pointer-events:none;
+  background:linear-gradient(180deg,transparent,rgba(9,15,35,.76));
+}
+.survey-photo figcaption{
+  position:absolute;z-index:4;left:14px;right:12px;bottom:13px;
+  color:#fff;font-size:12px;font-weight:800;line-height:1.45;
+  text-shadow:0 2px 10px rgba(0,0,0,.25);
+}
+.survey-photo figcaption small{display:block;margin-top:4px;font-weight:500;font-size:10px;opacity:.88}
+.photo-placeholder{
+  position:absolute;inset:0;z-index:0;display:flex;align-items:center;justify-content:center;
+  flex-direction:column;gap:9px;padding:18px;text-align:center;color:#536082;
+  background:radial-gradient(circle at 15% 15%,rgba(139,124,255,.15),transparent 38%),
+             radial-gradient(circle at 90% 85%,rgba(93,224,188,.22),transparent 38%),
+             linear-gradient(145deg,#f3f4ff,#effbf8);
+}
+.photo-placeholder .photo-symbol{
+  width:46px;height:46px;border-radius:15px;display:grid;place-items:center;
+  background:rgba(255,255,255,.9);border:1px solid rgba(113,101,232,.15);
+  color:#7165e8;font-size:22px;box-shadow:0 8px 20px rgba(72,75,140,.08)
+}
+.photo-placeholder strong{font-size:12px;color:#303b5b}
+.photo-placeholder small{font-size:10px;line-height:1.5;overflow-wrap:anywhere}
+.survey-photo.has-image .photo-placeholder{display:none}
+.survey-photo.has-image:after{z-index:2}
+.survey-photo.missing-image:after{display:none}
+.survey-photo.missing-image figcaption{display:none}
+@media(max-width:900px){
+  .reason-layout{grid-template-columns:1fr;gap:24px}
+  .survey-photo-grid{min-height:350px}
+}
+@media(max-width:620px){
+  .survey-photo-grid{grid-template-columns:1fr 1fr;grid-template-rows:190px 145px;gap:10px}
+  .survey-photo:first-child{grid-row:auto;grid-column:1 / span 2;min-height:190px}
+  .survey-photo{min-height:145px;border-radius:18px}
+  .survey-photo figcaption{left:10px;right:9px;bottom:10px;font-size:11px}
+  .survey-photo figcaption small{font-size:9px}
+  .photo-placeholder{padding:10px;gap:6px}
+  .photo-placeholder .photo-symbol{width:36px;height:36px;border-radius:12px;font-size:18px}
+  .photo-placeholder strong{font-size:10px}
+  .photo-placeholder small{font-size:9px}
+}
+
+</style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#home">
+        <div class="brand-mark"></div>
+        <div class="brand-text">
+          <span>CareerSense</span>
+          <small>Ý THỨC NGHỀ NGHIỆP CỦA SINH VIÊN</small>
+        </div>
+      </a>
+      <div class="menu">
+        <a href="#khainiem">Nguyên nhân chọn đề tài</a>
+        <a href="#thuctrang">Thực trạng</a>
+        <a href="#bieuhien">Biểu hiện</a>
+        <a href="#yeuto">Yếu tố</a>
+        <a href="#giaiphap">Giải pháp</a>
+        <a href="#khaosat">Khảo sát</a>
+        <a href="#nguon">Nguồn</a>
+      </div>
+    </div>
+  </nav>
+
+  <header id="home" class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">ĐỀ TÀI BÁO CÁO</div>
+        <h1>Ý thức nghề nghiệp <span>của sinh viên</span></h1>
+        <p>
+          Từ nhận thức về nghề nghiệp đến thái độ, trách nhiệm, năng lực và hành động:
+          sinh viên cần chuẩn bị gì để bước vào thị trường lao động một cách chủ động?
+        </p>
+        <div class="quote">“Ý thức nghề nghiệp của sinh viên là hệ thống tri thức, hiểu biết, thái độ, trách nhiệm và lòng yêu nghề mà mỗi sinh viên có được đối với ngành học và công việc mình sẽ theo đuổi trong tương lai.”</div>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#khainiem">Khám phá nội dung ↓</a>
+            <a class="btn btn-secondary" href="#khaosat">Xem số liệu khảo sát ↗</a>
+        </div>
+      </div>
+      <aside class="hero-card">
+        <div class="eyebrow">CAREER READINESS · 4 TRỤ CỘT</div>
+        <h3 style="font-size:23px;letter-spacing:-.5px;margin:18px 0 8px">Biến định hướng thành hành động</h3>
+        <p style="font-size:13px;margin:0">Một hành trình nghề nghiệp vững vàng bắt đầu từ hiểu mình, hiểu nghề và rèn luyện mỗi ngày.</p>
+        <div class="formula">
+          <div class="item"><span>01</span> Nhận thức <small style="display:block;color:#aeb9d2;font-weight:500;margin:4px 0 0 42px">Hiểu ngành, hiểu nghề, hiểu bản thân</small></div>
+          <div class="item"><span>02</span> Thái độ <small style="display:block;color:#aeb9d2;font-weight:500;margin:4px 0 0 42px">Chủ động, kỷ luật, cầu tiến</small></div>
+          <div class="item"><span>03</span> Năng lực <small style="display:block;color:#aeb9d2;font-weight:500;margin:4px 0 0 42px">Kiến thức, kỹ năng và trải nghiệm</small></div>
+          <div class="item"><span>04</span> Trách nhiệm <small style="display:block;color:#aeb9d2;font-weight:500;margin:4px 0 0 42px">Trung thực và giữ cam kết</small></div>
+        </div>
+        <div style="display:flex;justify-content:space-between;gap:12px;border-top:1px solid rgba(255,255,255,.12);padding-top:16px;color:#aeb9d2;font-size:11px">
+          <span>KHẢO SÁT THỰC TẾ</span><strong style="color:#73e9ce">20 câu hỏi · 122 phản hồi</strong>
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <main>
+
+
+
+    <section id="khainiem">
+      <div class="container">
+        <div class="reason-layout">
+        <div class="section-head">
+          <div class="label">01 • Lí do</div>
+          <h2>Lí do chọn đề tài?</h2>
+          <p>Trong bối cảnh thị trường lao động Việt Nam không ngừng thay đổi, vấn đề định hướng nghề nghiệp và chuẩn bị kỹ năng cho công việc tương lai ngày càng trở nên quan trọng đối với sinh viên. Việc hoàn thành chương trình đào tạo chưa đồng nghĩa với việc sinh viên đã sẵn sàng đáp ứng yêu cầu thực tế của công việc. Vì vậy, ý thức nghề nghiệp đóng vai trò quan trọng trong việc giúp sinh viên xác định mục tiêu, chủ động tìm hiểu ngành nghề và chuẩn bị những năng lực cần thiết trước khi tốt nghiệp.
+         Theo Tổ chức Lao động Quốc tế (ILO), trong bài viết “Từ giáo dục đến việc làm: Vì sao hỗ trợ phát triển nghề nghiệp quan trọng với thanh niên Việt Nam?” công bố ngày 27/8/2025, thanh niên Việt Nam vẫn gặp những khó khăn trong quá trình tiếp cận việc làm, định hướng nghề nghiệp và đáp ứng yêu cầu của thị trường lao động. Bên cạnh đó, sự phát triển của nền kinh tế số và kinh tế xanh cũng làm xuất hiện những yêu cầu mới về kiến thức, kỹ năng và khả năng thích ứng. Thực tế này cho thấy sinh viên cần chủ động tìm hiểu xu hướng nghề nghiệp, tích lũy kinh nghiệm thực tế và xác định hướng phát triển phù hợp với năng lực của bản thân.
+         Từ những vấn đề trên, nhóm lựa chọn đề tài “Ý thức nghề nghiệp của sinh viên hiện nay” nhằm tìm hiểu nhận thức và mức độ chủ động của sinh viên trong việc xác định mục tiêu nghề nghiệp, tìm hiểu thông tin thị trường lao động và chuẩn bị kỹ năng cho công việc tương lai. Thông qua khảo sát, nhóm mong muốn nhận diện những khó khăn mà sinh viên gặp phải trong quá trình định hướng nghề nghiệp, từ đó đề xuất các giải pháp phù hợp nhằm nâng cao ý thức nghề nghiệp và giúp sinh viên chuẩn bị tốt hơn cho quá trình chuyển tiếp từ nhà trường sang thị trường lao động.
+          </p>
+        </div>
+
+        <aside class="survey-photo-grid" aria-label="Hình ảnh nhóm thực hiện khảo sát thực tế">
+          <figure class="survey-photo">
+            <div class="photo-placeholder"><span class="photo-symbol">📷</span><strong>Ảnh khảo sát thực tế 01</strong><small>Thêm ảnh: images/khaosat-1.jpg</small></div>
+            <img src="images/khaosat-1.jpg" alt="Nhóm sinh viên thực hiện khảo sát trực tiếp" onload="this.parentElement.classList.add('has-image')" onerror="this.style.display='none';this.parentElement.classList.add('missing-image')">
+            <figcaption>Khảo sát trực tiếp<small>Ghi nhận ý kiến từ người tham gia</small></figcaption>
+          </figure>
+          <figure class="survey-photo">
+            <div class="photo-placeholder"><span class="photo-symbol">📷</span><strong>Ảnh khảo sát thực tế 02</strong><small>Thêm ảnh: images/khaosat-2.jpg</small></div>
+            <img src="images/khaosat-2.jpg" alt="Nhóm trao đổi với người tham gia khảo sát" onload="this.parentElement.classList.add('has-image')" onerror="this.style.display='none';this.parentElement.classList.add('missing-image')">
+            <figcaption>Trao đổi ý kiến<small>Tìm hiểu nhận thức nghề nghiệp</small></figcaption>
+          </figure>
+          <figure class="survey-photo">
+            <div class="photo-placeholder"><span class="photo-symbol">📷</span><strong>Ảnh khảo sát thực tế 03</strong><small>Thêm ảnh: images/khaosat-3.jpg</small></div>
+            <img src="images/khaosat-3.jpg" alt="Hoạt động khảo sát thực tế của nhóm" onload="this.parentElement.classList.add('has-image')" onerror="this.style.display='none';this.parentElement.classList.add('missing-image')">
+            <figcaption>Hoạt động của nhóm<small>Khảo sát phục vụ bài báo cáo</small></figcaption>
+          </figure>
+        </aside>
+        </div>
+
+        <div class="card" style="margin-bottom:22px;background:linear-gradient(135deg,#eef4ff,#f8f5ff);border-color:#dfe7ff;">
+          <p style="margin:0 0 8px;font-size:18px;font-weight:900;color:var(--text);">Khái niệm:</p>
+          <p style="margin:0;color:var(--text);">
+            <b>Ý thức nghề nghiệp: </b>có thể được hiểu là nhận thức, thái độ, trách nhiệm và định hướng của mỗi cá nhân đối với nghề nghiệp mà mình lựa chọn hoặc dự định theo đuổi. Đối với sinh viên, ý thức nghề nghiệp thể hiện qua việc hiểu rõ ngành học, xác định mục tiêu nghề nghiệp, nhận thức được yêu cầu của công việc và chủ động trau dồi kiến thức, kỹ năng để chuẩn bị cho tương lai.</p>
+          </p>Theo nghiên cứu Individual characteristics of students in vocational education moderating the relationship between school engagement and vocational identity đăng trên European Journal of Psychology of Education, bản sắc nghề nghiệp (vocational identity) liên quan đến cách cá nhân xác định bản thân trong bối cảnh nghề nghiệp, bao gồm nhận thức về sở thích, năng lực, mục tiêu và định hướng tương lai.
+          </p>
+        </div>
+
+        <div class="grid-4">
+          <article class="card">
+            <div class="icon">🧠</div>
+            <h3>Nhận thức</h3>
+            <p>Hiểu ngành học, công việc, yêu cầu chuyên môn, kỹ năng, môi trường làm việc và cơ hội phát triển.</p>
+          </article>
+          <article class="card">
+            <div class="icon">🎯</div>
+            <h3>Thái độ</h3>
+            <p>Thể hiện sự nghiêm túc, chủ động, cầu tiến, kiên trì và tôn trọng nghề nghiệp.</p>
+          </article>
+          <article class="card">
+            <div class="icon">⚖️</div>
+            <h3>Trách nhiệm</h3>
+            <p>Trung thực, kỷ luật, tôn trọng quy định, đồng nghiệp, khách hàng và lợi ích cộng đồng.</p>
+          </article>
+          <article class="card">
+            <div class="icon">🚀</div>
+            <h3>Hành động</h3>
+            <p>Học tập, rèn kỹ năng, trải nghiệm thực tế, thực tập, lập kế hoạch và chủ động cải thiện bản thân.</p>
+          </article>
+        </div>
+
+        <div class="card" style="margin-top:22px">
+          <h3>Ý thức nghề nghiệp ≠ Định hướng nghề nghiệp</h3>
+          <p>
+            Định hướng nghề nghiệp chủ yếu trả lời “Tôi muốn theo con đường nào?”.
+            Ý thức nghề nghiệp rộng hơn: “Tôi hiểu nghề đó ra sao, có trách nhiệm thế nào
+            và đang làm gì để trở thành người làm nghề có năng lực?”. Một sinh viên có thể
+            chưa chốt một vị trí nghề cụ thể nhưng vẫn có ý thức nghề nghiệp tốt nếu chủ động
+            khám phá, tự đánh giá và chuẩn bị cho tương lai.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="thuctrang" style="background:#fff">
+      <div class="container">
+        <div class="section-head">
+          <div class="label">02 • Thực trạng</div>
+          <h2>Vì sao vấn đề này đáng quan tâm?</h2>
+          <p>
+            Ý thức nghề nghiệp của sinh viên là vấn đề đáng quan tâm bởi nó có ảnh hưởng trực tiếp đến quá trình học tập, định hướng tương lai và khả năng thích ứng với thị trường lao động. Theo Cục Thống kê Việt Nam, tỷ lệ thất nghiệp của thanh niên từ 15 đến 24 tuổi trong quý II năm 2026 là 8,67%. Thực trạng này cho thấy quá trình chuyển tiếp từ học tập sang việc làm vẫn còn nhiều thách thức đối với người trẻ.
+          </p>
+          </p>
+           Bên cạnh đó, Tổ chức Lao động Quốc tế (ILO) trong bài viết về hỗ trợ phát triển nghề nghiệp cho thanh niên Việt Nam năm 2025 đã đề cập đến những khó khăn như thiếu định hướng nghề nghiệp, hạn chế về kỹ năng thực tiễn và sự chuẩn bị chưa đầy đủ trước khi tham gia thị trường lao động. Điều này cho thấy sinh viên không chỉ cần tích lũy kiến thức chuyên môn mà còn phải chủ động tìm hiểu nghề nghiệp, rèn luyện kỹ năng và xây dựng kế hoạch phát triển bản thân ngay từ khi còn ngồi trên ghế nhà trường.
+         </p>
+         </p>
+            Đáng chú ý, việc nhận thức được tầm quan trọng của nghề nghiệp chưa chắc đồng nghĩa với việc sinh viên đã có những hành động chuẩn bị cụ thể. Một số sinh viên có thể chưa xác định rõ mục tiêu nghề nghiệp, chưa hiểu đầy đủ yêu cầu của công việc hoặc chưa chủ động tìm kiếm cơ hội thực tập và phát triển kỹ năng. Vì vậy, việc nghiên cứu “Ý thức nghề nghiệp của sinh viên hiện nay” là cần thiết nhằm tìm hiểu nhận thức, thái độ và hành động thực tế của sinh viên đối với nghề nghiệp tương lai, từ đó đề xuất những giải pháp góp phần nâng cao hiệu quả định hướng nghề nghiệp và giúp sinh viên chuẩn bị tốt hơn trước khi bước vào thị trường lao động.
+         </p>
+        </div>
+
+        <div class="grid-4">
+          <div class="stat"><strong>8,87%</strong><span>Tỷ lệ thất nghiệp thanh niên 15–24 tuổi tại Việt Nam trong 9 tháng 2026</span></div>
+          <div class="stat"><strong>39%</strong><span>Gần 40% kỹ năng cốt lõi được dự báo sẽ thay đổi đến năm 2030</span></div>
+          <div class="stat"><strong>170M</strong><span>Số việc làm mới có thể được tạo ra đến năm 2030 theo WEF</span></div>
+          <div class="stat"><strong>92M</strong><span>Số việc làm có thể bị dịch chuyển đến năm 2030 theo WEF</span></div>
+        </div>
+
+        <div class="grid-2" style="margin-top:22px">
+          <div class="card">
+            <h3>Góc nhìn Việt Nam</h3>
+            <p>
+              Cục Thống kê cho biết tỷ lệ thất nghiệp của thanh niên 15–24 tuổi trong
+              chín tháng năm 2026 là 8,87%, tăng 0,5 điểm phần trăm so với cùng kỳ năm trước
+              và là mức cao nhất của các kỳ chín tháng trong giai đoạn 2020–2026.
+            </p>
+            <br>
+            <p>
+              ILO cũng lưu ý rằng trong năm 2024, việc làm phi chính thức chiếm 57,5% tổng
+              việc làm của thanh niên ở Việt Nam và chỉ 41,4% tham gia bảo hiểm xã hội.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Góc nhìn toàn cầu</h3>
+            <p>
+              World Economic Forum dự báo đến năm 2030, quá trình chuyển đổi của thị trường
+              lao động sẽ tạo ra khoảng 170 triệu vai trò mới nhưng đồng thời có khoảng 92 triệu
+              vai trò bị dịch chuyển. WEF cũng nhận định gần 40% kỹ năng cốt lõi cần cho công việc
+              sẽ thay đổi.
+            </p>
+            <br>
+            <p>
+              Những kỹ năng công nghệ như AI, dữ liệu lớn, mạng và an ninh mạng tăng nhanh về
+              nhu cầu; đồng thời các năng lực như tư duy phân tích, sáng tạo, khả năng thích nghi
+              và học tập suốt đời vẫn rất quan trọng.
+            </p>
+          </div>
+        </div>
+
+        <div class="note" style="margin-top:22px">
+          <b>Lưu ý khi báo cáo:</b> số liệu 8,87%, 57,5%, 41,4% và các con số WEF là dữ liệu từ nguồn
+          bên ngoài. Nếu nhóm tự khảo sát sinh viên của trường thì nên trình bày riêng dưới nhãn
+          <b>“Kết quả khảo sát của nhóm”</b>, không trộn với số liệu thống kê quốc gia/quốc tế.
+        </div>
+      </div>
+    </section>
+
+    <section id="bieuhien">
+      <div class="container">
+        <div class="section-head">
+          <div class="label">03 • Biểu hiện</div>
+          <h2>Ý thức nghề nghiệp thể hiện qua hành vi hằng ngày</h2>
+          <p>
+            Ý thức không chỉ nằm trong suy nghĩ. Nó phải được chuyển hóa thành cách học,
+            cách làm việc, cách chịu trách nhiệm và cách ứng xử.
+          </p>
+        </div>
+
+        <div class="compare">
+          <div class="compare-grid">
+            <div class="compare-col good">
+              <h3>✓ Có ý thức nghề nghiệp</h3>
+              <div>Chủ động học tập và tìm hiểu kiến thức ngoài chương trình</div>
+              <div>Hiểu ngành học gắn với các vị trí công việc thực tế</div>
+              <div>Biết tự đánh giá điểm mạnh và điểm yếu</div>
+              <div>Đúng giờ, đúng hạn, tôn trọng cam kết</div>
+              <div>Chủ động nhận phản hồi và sửa sai</div>
+              <div>Quan tâm đến đạo đức và trách nhiệm nghề nghiệp</div>
+              <div>Sẵn sàng học kỹ năng mới khi nghề nghiệp thay đổi</div>
+              <div>Tham gia dự án, thực tập, CLB hoặc trải nghiệm thực tế</div>
+            </div>
+            <div class="compare-col bad">
+              <h3>× Thiếu ý thức nghề nghiệp</h3>
+              <div>Học đối phó, chỉ tập trung vượt qua kỳ thi</div>
+              <div>Chọn ngành chủ yếu theo phong trào hoặc lời truyền miệng</div>
+              <div>Không biết mình còn thiếu kỹ năng gì</div>
+              <div>Thường xuyên trễ hạn, đùn đẩy trách nhiệm</div>
+              <div>Ngại nhận góp ý hoặc khó sửa sai</div>
+              <div>Chỉ quan tâm quyền lợi mà xem nhẹ trách nhiệm</div>
+              <div>Ngại cập nhật kiến thức và công nghệ mới</div>
+              <div>Chờ đến năm cuối mới bắt đầu chuẩn bị nghề nghiệp</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="yeuto" style="background:#fff">
+      <div class="container">
+        <div class="section-head">
+          <div class="label">04 • Yếu tố ảnh hưởng</div>
+          <h2>Ý thức nghề nghiệp được hình thành từ đâu?</h2>
+          <p>Đây là quá trình chịu ảnh hưởng đồng thời của cá nhân, gia đình, nhà trường, doanh nghiệp và xã hội.</p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card"><div class="icon">👤</div><h3>Bản thân</h3><p>Động lực, khả năng tự nhận thức, sở thích, năng lực, giá trị cá nhân và sự chủ động.</p></article>
+          <article class="card"><div class="icon">👨‍👩‍👦</div><h3>Gia đình</h3><p>Kỳ vọng, hỗ trợ, thông tin nghề nghiệp và cách gia đình tôn trọng sự tự chủ của sinh viên.</p></article>
+          <article class="card"><div class="icon">🏫</div><h3>Nhà trường</h3><p>Chương trình đào tạo, tư vấn nghề nghiệp, trải nghiệm thực tế, nghiên cứu và kết nối doanh nghiệp.</p></article>
+          <article class="card"><div class="icon">🏢</div><h3>Doanh nghiệp</h3><p>Thực tập, dự án, mentoring và tiếp xúc với môi trường làm việc giúp sinh viên hiểu yêu cầu thật của nghề.</p></article>
+          <article class="card"><div class="icon">🌐</div><h3>Xã hội</h3><p>Mạng xã hội, xu hướng nghề nghiệp, văn hóa làm việc và các hình mẫu nghề nghiệp ảnh hưởng đến nhận thức.</p></article>
+          <article class="card"><div class="icon">📈</div><h3>Thị trường lao động</h3><p>Nhu cầu tuyển dụng, chuyển đổi số, AI, chuyển đổi xanh, cơ hội việc làm và biến động kỹ năng.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <div class="label">05 • Vai trò</div>
+          <h2>Ý thức nghề nghiệp mang lại điều gì?</h2>
+        </div>
+
+        <div class="grid-4">
+          <div class="card"><div class="icon">📚</div><h3>Học có mục tiêu</h3><p>Hiểu kiến thức đang học sẽ phục vụ cho năng lực nghề nghiệp nào.</p></div>
+          <div class="card"><div class="icon">🧭</div><h3>Chủ động hơn</h3><p>Không chỉ chờ nhà trường hay doanh nghiệp chỉ dẫn mà biết tự tìm thông tin và cơ hội.</p></div>
+          <div class="card"><div class="icon">🛠️</div><h3>Tăng năng lực</h3><p>Chú trọng cả chuyên môn, kỹ năng mềm, công nghệ, giao tiếp và giải quyết vấn đề.</p></div>
+          <div class="card"><div class="icon">🌱</div><h3>Phát triển lâu dài</h3><p>Hình thành thói quen học tập suốt đời và khả năng thích nghi khi công việc thay đổi.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="giaiphap" style="background:#fff">
+      <div class="container">
+        <div class="section-head">
+          <div class="label">06 • Giải pháp</div>
+          <h2>Từ nhận thức đến hành động</h2>
+          <p>Một lộ trình đơn giản để sinh viên từng bước xây dựng ý thức nghề nghiệp.</p>
+        </div>
+
+        <div class="timeline">
+          <div class="step">
+            <div class="step-num">01</div>
+            <div class="step-box"><h4>Hiểu bản thân</h4><p>Đánh giá sở thích, năng lực, điểm mạnh, điểm yếu và giá trị cá nhân.</p></div>
+          </div>
+          <div class="step">
+            <div class="step-num">02</div>
+            <div class="step-box"><h4>Hiểu ngành và nghề</h4><p>Tìm hiểu công việc thực tế, yêu cầu kỹ năng, môi trường làm việc và triển vọng nghề nghiệp.</p></div>
+          </div>
+          <div class="step">
+            <div class="step-num">03</div>
+            <div class="step-box"><h4>Xác định mục tiêu</h4><p>Đặt mục tiêu ngắn hạn, dài hạn và những cột mốc có thể kiểm tra được.</p></div>
+          </div>
+          <div class="step">
+            <div class="step-num">04</div>
+            <div class="step-box"><h4>Rèn năng lực</h4><p>Kết hợp kiến thức chuyên môn với giao tiếp, làm việc nhóm, tư duy phân tích và kỹ năng số.</p></div>
+          </div>
+          <div class="step">
+            <div class="step-num">05</div>
+            <div class="step-box"><h4>Trải nghiệm thực tế</h4><p>Tham gia dự án, CLB, nghiên cứu, cuộc thi, thực tập hoặc các hoạt động gắn với công việc.</p></div>
+          </div>
+          <div class="step">
+            <div class="step-num">06</div>
+            <div class="step-box"><h4>Đánh giá & điều chỉnh</h4><p>Thường xuyên nhận phản hồi và điều chỉnh kế hoạch khi bản thân hoặc thị trường thay đổi.</p></div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:28px">
+          <h3>Nhà trường – doanh nghiệp – gia đình cần cùng tham gia</h3>
+          <p>
+            Nhà trường nên tăng cường tư vấn nghề nghiệp gắn với chương trình đào tạo, trải nghiệm thực tế
+            và kết nối doanh nghiệp. Doanh nghiệp có thể mở rộng thực tập, mentoring và dự án thực tế.
+            Gia đình nên hỗ trợ thông tin và tôn trọng sự tự chủ của sinh viên thay vì quyết định thay.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="khaosat">
+      <div class="container">
+        <div class="section-head">
+          <div class="label">07 • Dữ liệu thực tế</div>
+          <h2>Kết quả khảo sát sinh viên</h2>
+          <p>Số liệu được đồng bộ từ Google Sheets và tự kiểm tra cập nhật định kỳ. Chọn từng câu hỏi để xem kết quả khảo sát.</p>
+        </div>
+        <div class="survey-kpis">
+          <div class="survey-kpi"><span>TỔNG PHẢN HỒI</span><strong id="kpiResponses">122</strong><small id="kpiResponsesNote">Dữ liệu hiện có</small></div>
+          <div class="survey-kpi"><span>SỐ CÂU HỎI</span><strong id="kpiQuestions">20</strong><small>Được thống kê</small></div>
+          <div class="survey-kpi"><span>ĐỘ TUỔI PHỔ BIẾN</span><strong id="kpiAge">18 tuổi</strong><small id="kpiAgeNote">87,7% số phản hồi</small></div>
+          <div class="survey-kpi"><span>NHẬN ĐỊNH NỔI BẬT</span><strong id="kpiImportant">73,8%</strong><small>Cho rằng ý thức nghề nghiệp rất quan trọng</small></div>
+        </div>
+        <div class="survey-layout">
+          <div class="survey-panel">
+            <h3>Dữ liệu khảo sát trực tuyến</h3>
+            <p class="survey-muted">Website tự lấy dữ liệu từ bảng khảo sát đã xuất bản. Bạn không cần nhập link hay tải file thủ công.</p>
+            <div class="survey-controls">
+              <label for="surveyQuestionSelect">Chọn câu hỏi</label>
+              <select id="surveyQuestionSelect" aria-label="Chọn câu hỏi khảo sát"></select>
+              <button class="survey-btn" id="refreshSurvey" type="button">↻ Cập nhật ngay</button>
+              <a class="survey-btn alt survey-form-link" href="https://docs.google.com/forms/d/e/1FAIpQLSf83E3-7Tni9dAYHixksnl5s1l2YTKFFa11RtAkWJLeK1HnYA/viewform?usp=header" target="_blank" rel="noopener noreferrer">Tham gia khảo sát ↗</a>
+              <div class="survey-status" id="surveyStatus" role="status" aria-live="polite">Đang tải dữ liệu khảo sát…</div>
+            </div>
+            <p class="survey-chart-note">Dữ liệu được kiểm tra lại khoảng 30 giây một lần. Kết quả chỉ cập nhật khi bảng tính nguồn đã có dữ liệu mới.</p>
+          </div>
+          <div class="survey-panel">
+            <div class="survey-chart-head">
+              <div><h3 id="surveyChartTitle">Câu hỏi khảo sát</h3><small id="surveyChartSub">Số lượng lựa chọn và tỷ lệ phần trăm</small></div>
+              <small id="surveyDataSource">ĐANG TẢI…</small>
+            </div>
+            <div class="survey-bars" id="surveyBars"></div>
+            <div class="survey-insight" id="surveyInsight">Biểu đồ được tạo từ dữ liệu khảo sát.</div>
+            <div class="survey-chart-note" id="surveyChartNote">Câu hỏi cho phép chọn nhiều đáp án có thể có tổng tỷ lệ vượt quá 100%.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="quiz">
+      <div class="container">
+        <div class="section-head">
+          <div class="label">08 • Mini quiz</div>
+          <h2>Bạn đang ở mức nào?</h2>
+          <p>Quiz minh họa cho website. Đây không phải công cụ đánh giá tâm lý hay dự đoán nghề nghiệp chính thức.</p>
+        </div>
+
+        <div class="quiz-wrap">
+          <div class="card">
+            <div id="quizBox"></div>
+          </div>
+          <div class="quiz-result" id="resultBox">
+            <h3 style="margin-top:0">Kết quả</h3>
+            <p class="small">Trả lời các câu hỏi để xem mức độ sẵn sàng nghề nghiệp của bạn.</p>
+            <div id="score" style="font-size:38px;font-weight:900;color:var(--primary)">0/15</div>
+            <div id="resultText" class="small">Chưa có kết quả.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="background:#fff">
+      <div class="container">
+        <div class="section-head">
+          <div class="label">08 • Mô hình</div>
+          <h2>Khung hình thành ý thức nghề nghiệp</h2>
+        </div>
+        <div class="grid-4">
+          <div class="card"><div class="icon">01</div><h3>Nhận thức</h3><p>Hiểu mình – hiểu ngành – hiểu nghề – hiểu thị trường.</p></div>
+          <div class="card"><div class="icon">02</div><h3>Thái độ</h3><p>Chủ động – cầu tiến – kỷ luật – sẵn sàng học hỏi.</p></div>
+          <div class="card"><div class="icon">03</div><h3>Năng lực</h3><p>Chuyên môn – kỹ năng – công nghệ – giao tiếp – hợp tác.</p></div>
+          <div class="card"><div class="icon">04</div><h3>Trách nhiệm</h3><p>Trung thực – đúng cam kết – tuân thủ – có trách nhiệm với xã hội.</p></div>
+        </div>
+        <div class="card" style="margin-top:20px;text-align:center;background:linear-gradient(135deg,#edf2ff,#f8f2ff)">
+          <div style="font-size:20px;font-weight:900">NHẬN THỨC → THÁI ĐỘ → NĂNG LỰC → TRÁCH NHIỆM → HÀNH ĐỘNG</div>
+          <p style="margin-top:10px">→ Ý THỨC NGHỀ NGHIỆP → KHẢ NĂNG THÍCH ỨNG VÀ PHÁT TRIỂN NGHỀ NGHIỆP</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="nguon">
+      <div class="container">
+        <div class="section-head">
+          <div class="label">09 • Tài liệu tham khảo</div>
+          <h2>Nguồn sử dụng trong website</h2>
+          <p>Các nguồn chính dưới đây dùng để kiểm chứng những nhận định và số liệu trong nội dung.</p>
+        </div>
+
+        <div class="card sources">
+          <ol>
+            <li><b>Cục Thống kê – Bộ Tài chính.</b> “Thông cáo báo chí về tình hình lao động, việc làm quý III và 9 tháng năm 2026.” 03/10/2026.
+              <a href="https://www.nso.gov.vn/tin-tuc-thong-ke/2026/10/thong-cao-bao-chi-ve-tinh-hinh-lao-dong-viec-lam-quy-iii-va-9-thang-nam-2026/" target="_blank">Mở nguồn</a>
+            </li>
+            <li><b>ILO.</b> “Youth employment takes centre stage in Viet Nam’s future of work.” 18/09/2026.
+              <a href="https://www.ilo.org/resource/news/youth-employment-takes-centre-stage-viet-nam%E2%80%99s-future-work" target="_blank">Mở nguồn</a>
+            </li>
+            <li><b>ILO.</b> “Global Employment Trends for Youth 2024.”
+              <a href="https://www.ilo.org/publications/major-publications/global-employment-trends-youth-2024" target="_blank">Mở nguồn</a>
+            </li>
+            <li><b>OECD.</b> “Teenage career uncertainty: Why it matters and how to reduce it?” 27/09/2024.
+              <a href="https://www.oecd.org/en/publications/teenage-career-uncertainty_e89c3da9-en.html" target="_blank">Mở nguồn</a>
+            </li>
+            <li><b>OECD.</b> “The State of Global Teenage Career Preparation.” 20/05/2025.
+              <a href="https://www.oecd.org/en/publications/the-state-of-global-teenage-career-preparation_d5f8e3f2-en/full-report/component-5.html" target="_blank">Mở nguồn</a>
+            </li>
+            <li><b>World Economic Forum.</b> “The Future of Jobs Report 2025.”
+              <a href="https://www.weforum.org/publications/the-future-of-jobs-report-2025/" target="_blank">Mở nguồn</a>
+            </li>
+            <li><b>Luật Giáo dục đại học Việt Nam.</b> Các quy định về chương trình đào tạo và năng lực người học.
+              <a href="https://vbpl.vn/daklak/Pages/vbpq-toanvan.aspx?ItemID=27706" target="_blank">Mở nguồn</a>
+            </li>
+          </ol>
+          <div class="note">
+            <b>Gợi ý cho nhóm:</b> Nếu có khảo sát riêng về sinh viên trong trường, hãy thêm một mục
+            “Kết quả khảo sát của nhóm” với Google Forms/Excel và ghi rõ cỡ mẫu, thời gian khảo sát,
+            đối tượng khảo sát và cách tính tỷ lệ.
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <h3 style="margin-top:0">Ý thức nghề nghiệp của sinh viên</h3>
+        <p class="small">
+          Website phục vụ mục đích trình bày báo cáo học tập. Nội dung được tổng hợp từ các nguồn
+          chính thống và tài liệu nghiên cứu; các nhận định mang tính học thuật, không phải tư vấn nghề nghiệp cá nhân.
+        </p>
+      </div>
+      <div>
+        <span class="pill">Thông điệp</span>
+        <p style="font-weight:850;font-size:18px">
+          Học để biết. Rèn để giỏi. Làm việc có trách nhiệm. Sẵn sàng thích nghi.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-top" id="backTop" aria-label="Lên đầu trang">↑</button>
+
+<script>
+
+/* ===== SURVEY DATA DASHBOARD =====
+   Số liệu ban đầu chỉ là dữ liệu dự phòng. Website đọc Google Sheets bằng JSONP
+   để tránh lỗi CORS của fetch() khi tải CSV từ tên miền Google.
+   gid=0 đang giả định tab đầu tiên là tab phản hồi. Hãy đổi nếu gid khác.
+   Không công khai bảng thô có tên/email; hãy dùng bảng riêng đã ẩn danh.
+*/
+const INITIAL_SURVEY_DATA = {"responses":122,"questions":[{"title":"Câu 1: Tuổi của bạn","rows":[{"label":"18","count":107,"percent":87.7},{"label":"19","count":8,"percent":6.6},{"label":"22","count":4,"percent":3.3},{"label":"20","count":3,"percent":2.5}]},{"title":"Câu 2: Bạn đang là sinh viên năm mấy?","rows":[{"label":"Năm 1","count":107,"percent":87.7},{"label":"Năm 2","count":6,"percent":4.9},{"label":"Năm 3","count":5,"percent":4.1},{"label":"Năm 4","count":2,"percent":1.6},{"label":"du học","count":1,"percent":0.8},{"label":"Bồi dưỡng du học Hàn Quốc","count":1,"percent":0.8}]},{"title":"Câu 3: Ngành học của bạn thuộc nhóm nào?","rows":[{"label":"Kinh tế – Quản trị","count":31,"percent":25.4},{"label":"Kỹ thuật","count":25,"percent":20.5},{"label":"Công nghệ thông tin","count":22,"percent":18.0},{"label":"Ngoại ngữ","count":7,"percent":5.7},{"label":"Khoa học xã hội – Nhân văn","count":6,"percent":4.9},{"label":"Y – Dược","count":4,"percent":3.3},{"label":"Luật","count":4,"percent":3.3},{"label":"Truyền thông","count":2,"percent":1.6},{"label":"logistics và quản lí chuỗi cung ứng","count":2,"percent":1.6},{"label":"An toàn thông tin","count":1,"percent":0.8}]},{"title":"Câu 4: Bạn đã xác định được nghề nghiệp mình muốn theo đuổi sau khi tốt nghiệp chưa?","rows":[{"label":"Có định hướng nhưng chưa chắc chắn","count":64,"percent":52.5},{"label":"Đã xác định rõ","count":41,"percent":33.6},{"label":"Chưa xác định","count":13,"percent":10.7},{"label":"Chưa quan tâm đến vấn đề này","count":4,"percent":3.3}]},{"title":"Câu 5: Theo bạn, ý thức nghề nghiệp có quan trọng đối với sinh viên không?","rows":[{"label":"Rất quan trọng","count":90,"percent":73.8},{"label":"Quan trọng","count":30,"percent":24.6},{"label":"Không quan trọng","count":1,"percent":0.8},{"label":"Bình thường","count":1,"percent":0.8}]},{"title":"Câu 6: Bạn cho rằng việc xác định mục tiêu nghề nghiệp nên bắt đầu từ khi nào?","rows":[{"label":"Trước khi vào đại học","count":63,"percent":51.6},{"label":"Năm nhất","count":29,"percent":23.8},{"label":"Năm hai","count":14,"percent":11.5},{"label":"Năm ba","count":10,"percent":8.2},{"label":"Năm cuối","count":5,"percent":4.1},{"label":"Khi bắt đầu đi làm","count":1,"percent":0.8}]},{"title":"Câu 7: Bạn hiểu rõ yêu cầu của nghề nghiệp mà mình định hướng ở mức nào?","rows":[{"label":"Biết sơ bộ","count":51,"percent":41.8},{"label":"Khá rõ","count":43,"percent":35.2},{"label":"Rất rõ","count":17,"percent":13.9},{"label":"Chưa hiểu rõ","count":11,"percent":9.0}]},{"title":"Câu 8: Bạn có thường xuyên tìm hiểu thông tin về ngành nghề của mình không?","rows":[{"label":"Thỉnh thoảng","count":43,"percent":35.2},{"label":"Thường xuyên","count":40,"percent":32.8},{"label":"Rất thường xuyên","count":25,"percent":20.5},{"label":"Hiếm khi","count":9,"percent":7.4},{"label":"Không bao giờ","count":5,"percent":4.1}]},{"title":"Câu 9: Bạn đã từng tham gia hoạt động nào để chuẩn bị cho nghề nghiệp tương lai?","rows":[{"label":"Chưa tham gia hoạt động nào","count":44,"percent":21.5},{"label":"Tham gia câu lạc bộ","count":33,"percent":16.1},{"label":"Học thêm chứng chỉ hoặc kỹ năng","count":29,"percent":14.1},{"label":"Thực tập","count":26,"percent":12.7},{"label":"Tham gia hoạt động ngoại khóa","count":25,"percent":12.2},{"label":"Tham gia workshop hoặc hội thảo nghề nghiệp","count":24,"percent":11.7},{"label":"Làm thêm","count":24,"percent":11.7}]},{"title":"Câu 10: Bạn tự đánh giá mức độ chuẩn bị cho công việc sau khi tốt nghiệp của mình như thế nào?","rows":[{"label":"Trung bình","count":50,"percent":41.0},{"label":"Khá tốt","count":31,"percent":25.4},{"label":"Rất tốt","count":17,"percent":13.9},{"label":"Chưa tốt","count":16,"percent":13.1},{"label":"Chưa có sự chuẩn bị","count":8,"percent":6.6}]},{"title":"Câu 11: Theo bạn, sinh viên cần trang bị những yếu tố nào để đáp ứng yêu cầu nghề nghiệp?","rows":[{"label":"Kiến thức chuyên môn","count":101,"percent":16.0},{"label":"Kỹ năng giao tiếp","count":87,"percent":13.7},{"label":"Ngoại ngữ","count":81,"percent":12.8},{"label":"Thái độ và trách nhiệm trong công việc","count":79,"percent":12.5},{"label":"Kỹ năng làm việc nhóm","count":77,"percent":12.2},{"label":"Kỹ năng giải quyết vấn đề","count":75,"percent":11.8},{"label":"Tin học và công nghệ","count":69,"percent":10.9},{"label":"Kinh nghiệm thực tế","count":63,"percent":10.0},{"label":"Tất cả ý trên","count":1,"percent":0.2}]},{"title":"Câu 12: Bạn có cho rằng sinh viên cần chủ động chịu trách nhiệm với định hướng nghề nghiệp của mình không?","rows":[{"label":"Hoàn toàn đồng ý","count":64,"percent":52.5},{"label":"Đồng ý","count":50,"percent":41.0},{"label":"Phân vân","count":8,"percent":6.6}]},{"title":"Câu 13: Khi gặp khó khăn trong quá trình học tập hoặc chuẩn bị nghề nghiệp, bạn thường làm gì?","rows":[{"label":"Chủ động tìm cách giải quyết","count":68,"percent":55.7},{"label":"Tìm kiếm thông tin trên Internet","count":31,"percent":25.4},{"label":"Hỏi bạn bè hoặc thầy cô","count":15,"percent":12.3},{"label":"Không biết phải làm gì","count":5,"percent":4.1},{"label":"Tạm bỏ qua và chờ giải quyết sau","count":3,"percent":2.5}]},{"title":"Câu 14: Điều gì ảnh hưởng nhiều nhất đến định hướng nghề nghiệp của bạn","rows":[{"label":"Năng lực bản thân","count":76,"percent":22.3},{"label":"Sở thích cá nhân","count":71,"percent":20.8},{"label":"Nhu cầu của thị trường lao động","count":68,"percent":19.9},{"label":"Thu nhập","count":52,"percent":15.2},{"label":"Xu hướng xã hội","count":32,"percent":9.4},{"label":"Gia đình","count":31,"percent":9.1},{"label":"Bạn bè","count":11,"percent":3.2}]},{"title":"Câu 15: Bạn có sẵn sàng học hỏi thêm những kiến thức và kỹ năng mới để phục vụ công việc tương lai không?","rows":[{"label":"Rất sẵn sàng","count":63,"percent":51.6},{"label":"Sẵn sàng","count":41,"percent":33.6},{"label":"Còn tùy trường hợp","count":14,"percent":11.5},{"label":"Không chắc chắn","count":4,"percent":3.3}]},{"title":"Câu 16: Khó khăn lớn nhất của bạn trong việc định hướng nghề nghiệp là gì?","rows":[{"label":"Chưa có kinh nghiệm thực tế","count":67,"percent":27.0},{"label":"Chưa hiểu rõ bản thân","count":58,"percent":23.4},{"label":"Lo lắng về việc làm sau khi tốt nghiệp","count":48,"percent":19.4},{"label":"Thiếu thông tin về nghề nghiệp","count":34,"percent":13.7},{"label":"Chưa biết mình phù hợp với nghề nào","count":25,"percent":10.1},{"label":"Áp lực từ gia đình","count":16,"percent":6.5}]},{"title":"Câu 17: Theo bạn, nhà trường nên làm gì để giúp sinh viên nâng cao ý thức nghề nghiệp?","rows":[{"label":"Tăng cường hoạt động thực tế và thực tập","count":82,"percent":23.8},{"label":"Tổ chức ngày hội việc làm","count":62,"percent":18.0},{"label":"Tổ chức tư vấn hướng nghiệp","count":62,"percent":18.0},{"label":"Cung cấp thông tin về thị trường lao động","count":48,"percent":14.0},{"label":"Tổ chức các khóa học kỹ năng","count":45,"percent":13.1},{"label":"Mời doanh nghiệp giao lưu","count":45,"percent":13.1}]},{"title":"Câu 18: Bạn mong muốn nhà trường hỗ trợ gì nhất trong quá trình định hướng nghề nghiệp?","rows":[{"label":"không","count":6,"percent":4.9},{"label":"Không biết","count":4,"percent":3.3},{"label":"Tổ chức nhiều hoạt động","count":3,"percent":2.5},{"label":"Tư vấn","count":2,"percent":1.6},{"label":"lời khuyên","count":2,"percent":1.6},{"label":"Tổ chức tư vấn và ngày hội việc làm cho sinh viên, mở rộng và các hoạt động nghề nghiệp thực tế cùng với cơ hội thực tập cho sinh viên.","count":2,"percent":1.6},{"label":"Tổ chức các khóa học kỹ năng","count":2,"percent":1.6},{"label":"Tổ chức tư vấn nghề nghiệp","count":2,"percent":1.6},{"label":"ok","count":2,"percent":1.6},{"label":"Kiến Thức","count":2,"percent":1.6}]},{"title":"Câu 19: Theo bạn, sinh viên cần làm gì để nâng cao ý thức nghề nghiệp của bản thân?","rows":[{"label":"học","count":4,"percent":3.3},{"label":"Chủ động tìm hiểu","count":4,"percent":3.3},{"label":"Không biết","count":3,"percent":2.5},{"label":"Học tập","count":3,"percent":2.5},{"label":"Không","count":3,"percent":2.5},{"label":"hiểu rõ bản thân","count":2,"percent":1.6},{"label":".","count":2,"percent":1.6},{"label":"Tự nâng cao trình độ ngoại ngữ, tin học, học thêm các kỹ năng mền cần thiết, tìm tòi và hiểu rõ, yêu cầu của ngành nghề muốn theo đuổi, hiểu rõ ưu và nhược điểm của bản thân để thay đổi cải thiện và phát triển, học hỏi lắng nghe từ nhiều góc nhìn của người trong ngành","count":2,"percent":1.6},{"label":"ok","count":2,"percent":1.6},{"label":"ăds","count":1,"percent":0.8}]},{"title":"Câu 20: Bạn có đề xuất nào khác về việc nâng cao ý thức nghề nghiệp của sinh viên hiện nay?","rows":[{"label":"không","count":40,"percent":32.8},{"label":"không có","count":6,"percent":4.9},{"label":"Chưa biết","count":4,"percent":3.3},{"label":"ko","count":4,"percent":3.3},{"label":"ok","count":4,"percent":3.3},{"label":"Không biết","count":3,"percent":2.5},{"label":"Ko có","count":2,"percent":1.6},{"label":".","count":2,"percent":1.6},{"label":"Có nhiều trang web uy tín nói rõ về các ngành nghề, các bài test tính cách nhằm cho sinh viên hiểu rõ bản thân, tìm kiếm ngành nghề dựa trên năng lực, mong muốn ,điều kiện gia đình và nhu cầu thị trường lao động trong 5-10 năm sắp tới, hoạch định rõ ràng mục tiêu gần và xa của bản thân","count":2,"percent":1.6},{"label":"ăd","count":1,"percent":0.8}]}],"updatedLabel":"Dữ liệu tổng hợp từ file khảo sát hiện có"};
+const SURVEY_SHEET_ID = "1xdmjRhLiO8kQDPq9fRJeXmmBivQaRX8mQGri1MDQr6I";
+// gid=0 là giả định tab đầu tiên. Nếu tab câu trả lời có gid khác, hãy đổi số này.
+const SURVEY_SHEET_GID = "0";
+let surveyData = JSON.parse(JSON.stringify(INITIAL_SURVEY_DATA));
+let surveySource = "DỮ LIỆU DỰ PHÒNG";
+let surveyRefreshTimer = null;
+let surveyIsLoading = false;
+
+function fmtPct(n){ const value=Number(n); return (Number.isFinite(value)?value:0).toLocaleString("vi-VN",{minimumFractionDigits:0,maximumFractionDigits:1}) + "%"; }
+function calcPercent(count, denominator){
+  const c = Number(count) || 0;
+  const d = Number(denominator) || 0;
+  return d > 0 ? Math.round((c / d) * 1000) / 10 : 0;
+}
+function isMultiSelectQuestion(title){
+  return /hoạt động nào|những yếu tố nào|yếu tố nào|ảnh hưởng nhiều nhất|nhà trường nên làm gì|cần trang bị những yếu tố/i.test(String(title || ""));
+}
+function safeText(v){ return String(v ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
+function updateSurveyKpis(){
+  document.getElementById("kpiResponses").textContent = Number(surveyData.responses || 0).toLocaleString("vi-VN");
+  const responseNote=document.getElementById("kpiResponsesNote");
+  if(responseNote) responseNote.textContent = surveySource === "ĐỒNG BỘ GOOGLE SHEETS" ? "Đang đồng bộ dữ liệu thực tế" : "Số liệu dự phòng khi chưa kết nối";
+  document.getElementById("kpiQuestions").textContent = (surveyData.questions || []).length;
+  const ageQ = (surveyData.questions || []).find(q => /tuổi/i.test(q.title));
+  const ageTop = ageQ && ageQ.rows.slice().sort((a,b)=>b.count-a.count)[0];
+  document.getElementById("kpiAge").textContent = ageTop ? (/^\d+$/.test(ageTop.label) ? ageTop.label+" tuổi" : ageTop.label) : "—";
+  document.getElementById("kpiAgeNote").textContent = ageTop ? fmtPct(ageTop.percent) + " số phản hồi" : "Chưa có dữ liệu";
+  const impQ = (surveyData.questions || []).find(q => /ý thức nghề nghiệp có quan trọng/i.test(q.title));
+  const imp = impQ && impQ.rows.find(r => /rất quan trọng/i.test(r.label));
+  document.getElementById("kpiImportant").textContent = imp ? fmtPct(imp.percent) : "—";
+}
+function fillQuestionSelect(){
+  const select = document.getElementById("surveyQuestionSelect");
+  const old = select.value;
+  select.innerHTML = (surveyData.questions || []).map((q,i)=>`<option value="${i}">${safeText(q.title)}</option>`).join("");
+  if(old && Number(old) < surveyData.questions.length) select.value=old;
+  if(!select.value && surveyData.questions.length) select.value="0";
+}
+function renderSurveyChart(){
+  const index = Number(document.getElementById("surveyQuestionSelect").value || 0);
+  const q = (surveyData.questions || [])[index];
+  const bars = document.getElementById("surveyBars");
+  if(!q){ bars.innerHTML='<p class="survey-muted">Chưa có dữ liệu để hiển thị.</p>'; return; }
+  document.getElementById("surveyChartTitle").textContent = q.title;
+  document.getElementById("surveyChartSub").textContent = "Số lượt: " + q.rows.reduce((sum,r)=>sum+Number(r.count||0),0).toLocaleString("vi-VN") + " · Sắp xếp theo số lượt chọn";
+  document.getElementById("surveyDataSource").textContent = surveySource;
+  const max = Math.max(1,...q.rows.map(r=>Number(r.count||0)));
+  bars.innerHTML = q.rows.slice().sort((a,b)=>b.count-a.count).map(r=>{
+    const width=Math.max(2,Math.min(100,(Number(r.count||0)/max)*100));
+    return `<div class="survey-bar-row"><div class="survey-bar-label"><strong>${safeText(r.label)}</strong><span>${Number(r.count||0).toLocaleString("vi-VN")} · ${fmtPct(r.percent||0)}</span></div><div class="survey-track"><span style="width:${width}%"></span></div></div>`;
+  }).join("");
+  const top=q.rows.slice().sort((a,b)=>b.count-a.count)[0];
+  document.getElementById("surveyInsight").innerHTML = top
+    ? `Lựa chọn phổ biến nhất ở câu hỏi này là <b>${safeText(top.label)}</b>, với <b>${Number(top.count).toLocaleString("vi-VN")} lượt</b> (${fmtPct(top.percent||0)}). Nhận xét này được cập nhật tự động theo dữ liệu đang hiển thị.`
+    : "Chưa có câu trả lời hợp lệ cho câu hỏi này.";
+}
+function renderSurvey(){
+  updateSurveyKpis(); fillQuestionSelect(); renderSurveyChart();
+}
+function setSurveyStatus(message,isError=false){
+  const el=document.getElementById("surveyStatus");
+  el.textContent=message;el.classList.toggle("error",!!isError);
+}
+function parseCSV(text){
+  const rows=[];let row=[],cell="",quoted=false;
+  for(let i=0;i<text.length;i++){
+    const c=text[i],next=text[i+1];
+    if(c==='"' && quoted && next==='"'){cell+='"';i++;}
+    else if(c==='"'){quoted=!quoted;}
+    else if(c===',' && !quoted){row.push(cell);cell="";}
+    else if((c==='\n'||c==='\r')&&!quoted){
+      if(c==='\r'&&next==='\n')i++;
+      row.push(cell);if(row.some(v=>String(v).trim()!==""))rows.push(row);
+      row=[];cell="";
+    }else cell+=c;
+  }
+  if(cell.length||row.length){row.push(cell);if(row.some(v=>String(v).trim()!==""))rows.push(row);}
+  return rows;
+}
+function normaliseSummaryRows(rows){
+  const header=(rows[0]||[]).map(x=>String(x).trim().toLowerCase());
+  const qIdx=header.findIndex(x=>/câu hỏi|question|cau hoi/.test(x));
+  const aIdx=header.findIndex(x=>/lựa chọn|câu trả lời|option|answer|đáp án/.test(x));
+  const cIdx=header.findIndex(x=>/số lượt|số lượng|count|responses|lượt/.test(x));
+  const pIdx=header.findIndex(x=>/tỷ lệ|percent|percentage|%/.test(x));
+  const nIdx=header.findIndex(x=>/tổng phản hồi|total responses|số người trả lời/.test(x));
+  if(qIdx<0||aIdx<0||cIdx<0)return null;
+  const groups=new Map(); let total=0;
+  rows.slice(1).forEach(row=>{
+    const title=String(row[qIdx]||"").trim();
+    const label=String(row[aIdx]||"").trim();
+    if(!title||!label)return;
+    const count=Number(String(row[cIdx]||"0").replace(/\.(?=\d{3}(?:\D|$))/g,"").replace(",","."))||0;
+    if(nIdx>=0) total=Math.max(total,Number(String(row[nIdx]||"0").replace(/\.(?=\d{3}(?:\D|$))/g,"").replace(",","."))||0);
+    if(!groups.has(title))groups.set(title,[]);
+    const list=groups.get(title);
+    const existing=list.find(item=>item.label===label);
+    if(existing)existing.count+=count; else list.push({label,count,percent:0});
+  });
+  if(!groups.size)return null;
+  const questions=[...groups.entries()].map(([title,items])=>{
+    const sum=items.reduce((n,item)=>n+item.count,0);
+    const denominator=isMultiSelectQuestion(title)?(total||sum):sum;
+    items.forEach(item=>item.percent=calcPercent(item.count,denominator));
+    items.sort((a,b)=>b.count-a.count);
+    return {title,rows:items};
+  });
+  if(!total) total=Math.max(...questions.map(q=>q.rows.reduce((sum,r)=>sum+r.count,0)),0);
+  return {responses:total,questions,updatedLabel:"CSV tổng hợp"};
+}
+function rawRowsToSurvey(rows){
+  if(rows.length<2)return null;
+  const headers=rows[0].map((h,i)=>String(h||"").trim()||("Cột "+(i+1)));
+  const skip=/timestamp|dấu thời gian|email address|địa chỉ email|họ và tên|họ tên|số điện thoại|phone|email/i;
+  const dataRows=rows.slice(1).filter(row=>row.some(cell=>String(cell||"").trim()!==""));
+  const questions=[];
+  headers.forEach((header,col)=>{
+    if(skip.test(header))return;
+    const answers=dataRows.map(r=>String(r[col]||"").trim()).filter(Boolean);
+    if(!answers.length)return;
+    const counts=new Map();
+    const multi=isMultiSelectQuestion(header);
+    answers.forEach(answer=>{
+      const parts=multi?answer.split(/\s*,\s*/).filter(Boolean):[answer];
+      parts.forEach(part=>counts.set(part,(counts.get(part)||0)+1));
+    });
+    const denominator=answers.length;
+    const items=[...counts.entries()].map(([label,count])=>({label,count,percent:calcPercent(count,denominator)}));
+    items.sort((a,b)=>b.count-a.count);
+    questions.push({title:header,rows:items});
+  });
+  if(!questions.length)return null;
+  return {responses:dataRows.length,questions,updatedLabel:"Dữ liệu phản hồi CSV"};
+}
+function rowsFromGviz(response){
+  if(!response) throw new Error("Google Sheets không trả về dữ liệu.");
+  if(response.status !== "ok"){
+    const details = (response.errors || [])
+      .map(item => item && (item.detailed_message || item.message))
+      .filter(Boolean)
+      .join(" ");
+    throw new Error(details || "Không đọc được tab Google Sheets. Hãy kiểm tra quyền xem và mã gid.");
+  }
+
+  const table = response.table;
+  if(!table || !Array.isArray(table.cols) || !Array.isArray(table.rows)){
+    throw new Error("Bảng tính trả về dữ liệu không đúng cấu trúc.");
+  }
+
+  const headers = table.cols.map((col, index) => {
+    const label = col && (col.label || col.id);
+    return String(label || ("Cột " + (index + 1))).trim();
+  });
+  const rows = [headers];
+
+  table.rows.forEach(line => {
+    const cells = Array.isArray(line && line.c) ? line.c : [];
+    rows.push(headers.map((_, index) => {
+      const cell = cells[index];
+      if(!cell) return "";
+      const value = cell.f !== undefined && cell.f !== null ? cell.f : cell.v;
+      return value === undefined || value === null ? "" : String(value);
+    }));
+  });
+  return rows;
+}
+
+function connectSurveyCsv(showMessage=true){
+  if(surveyIsLoading) return;
+  surveyIsLoading = true;
+
+  const button = document.getElementById("refreshSurvey");
+  if(button) button.disabled = true;
+  if(showMessage) setSurveyStatus("Đang đồng bộ dữ liệu khảo sát từ Google Sheets…");
+
+  const callbackName = "careerSenseSheetCallback_" + Date.now() + "_" + Math.floor(Math.random() * 1000000);
+  const script = document.createElement("script");
+  let timeoutId = null;
+  let finished = false;
+
+  function cleanUp(){
+    if(finished) return;
+    finished = true;
+    if(timeoutId !== null) window.clearTimeout(timeoutId);
+    if(script.parentNode) script.parentNode.removeChild(script);
+    try { delete window[callbackName]; }
+    catch(_) { window[callbackName] = undefined; }
+    surveyIsLoading = false;
+    if(button) button.disabled = false;
+  }
+
+  function fail(error){
+    if(finished) return;
+    const message = error && error.message ? error.message : "Lỗi không xác định.";
+    surveySource = "DỮ LIỆU DỰ PHÒNG";
+    renderSurvey();
+    setSurveyStatus(
+      "Chưa lấy được dữ liệu mới. Website đang hiển thị số liệu dự phòng. " + message +
+      " Nếu lỗi tiếp tục, kiểm tra quyền xem của bảng tính và gid của tab phản hồi.",
+      true
+    );
+    cleanUp();
+  }
+
+  window[callbackName] = function(response){
+    if(finished) return;
+    try {
+      const rows = rowsFromGviz(response);
+      const next = normaliseSummaryRows(rows) || rawRowsToSurvey(rows);
+      if(!next || !next.questions || !next.questions.length){
+        throw new Error("Đã đọc được bảng nhưng chưa nhận diện được các cột câu hỏi và câu trả lời.");
+      }
+      if(!Number.isFinite(Number(next.responses)) || Number(next.responses) < 1){
+        throw new Error("Bảng tính chưa có phản hồi hợp lệ để thống kê.");
+      }
+
+      surveyData = next;
+      surveySource = "ĐỒNG BỘ GOOGLE SHEETS";
+      renderSurvey();
+      const now = new Date().toLocaleTimeString("vi-VN", {
+        hour: "2-digit", minute: "2-digit", second: "2-digit"
+      });
+      setSurveyStatus(
+        "Đã cập nhật lúc " + now + " · " +
+        Number(surveyData.responses || 0).toLocaleString("vi-VN") +
+        " phản hồi · " + surveyData.questions.length + " câu hỏi."
+      );
+      cleanUp();
+    } catch(error) {
+      fail(error);
+    }
+  };
+
+  script.onerror = function(){
+    fail(new Error("Không tải được Google Sheets. Hãy kiểm tra kết nối mạng, quyền xem của bảng tính và mã gid của tab phản hồi."));
+  };
+
+  // Dùng JSONP qua thẻ script thay vì fetch(), giúp tránh lỗi CORS thường gặp với CSV.
+  const tqx = "out:json;responseHandler:" + callbackName;
+  script.src = "https://docs.google.com/spreadsheets/d/" +
+    encodeURIComponent(SURVEY_SHEET_ID) + "/gviz/tq?tqx=" +
+    encodeURIComponent(tqx) + "&gid=" +
+    encodeURIComponent(SURVEY_SHEET_GID) + "&headers=1&_=" + Date.now();
+
+  timeoutId = window.setTimeout(function(){
+    fail(new Error("Google Sheets không phản hồi sau 15 giây. Kiểm tra bảng có quyền xem bằng liên kết và gid có đúng không."));
+  }, 15000);
+
+  document.head.appendChild(script);
+}
+document.getElementById("refreshSurvey").addEventListener("click",()=>connectSurveyCsv(true));
+document.getElementById("surveyQuestionSelect").addEventListener("change",renderSurveyChart);
+renderSurvey();
+connectSurveyCsv(true);
+surveyRefreshTimer=setInterval(()=>connectSurveyCsv(false),30000);
+window.addEventListener("beforeunload",()=>{if(surveyRefreshTimer)clearInterval(surveyRefreshTimer);});
+
+const questions = [
+  {
+    q:"Bạn có hiểu khá rõ công việc thực tế liên quan đến ngành mình đang học không?",
+    options:["Chưa hiểu","Biết sơ bộ","Khá rõ","Rất rõ"],
+    scores:[0,1,2,3]
+  },
+  {
+    q:"Bạn có chủ động học thêm kiến thức hoặc kỹ năng ngoài chương trình không?",
+    options:["Hiếm khi","Thỉnh thoảng","Thường xuyên","Gần như mỗi tuần"],
+    scores:[0,1,2,3]
+  },
+  {
+    q:"Khi nhận nhiệm vụ nhóm, bạn thường phản ứng thế nào?",
+    options:["Chờ người khác nhắc","Làm phần mình được giao","Chủ động phối hợp","Chủ động + hỗ trợ cả nhóm"],
+    scores:[0,1,2,3]
+  },
+  {
+    q:"Bạn đã có trải nghiệm thực tế liên quan đến ngành chưa?",
+    options:["Chưa có","Có một ít","Đã tham gia vài hoạt động","Có dự án/thực tập rõ ràng"],
+    scores:[0,1,2,3]
+  },
+  {
+    q:"Khi công nghệ hoặc yêu cầu công việc thay đổi, bạn sẽ làm gì?",
+    options:["Chờ được hướng dẫn","Tìm hiểu khi bắt buộc","Tự học thêm","Chủ động cập nhật thường xuyên"],
+    scores:[0,1,2,3]
+  }
+];
+
+let current=0, total=0;
+
+function renderQuestion(){
+  const box=document.getElementById("quizBox");
+  if(current>=questions.length){
+    finishQuiz();
+    return;
+  }
+  const item=questions[current];
+  box.innerHTML=`
+    <div class="pill">Câu ${current+1}/5</div>
+    <div class="quiz-question" style="margin-top:13px">${item.q}</div>
+    ${item.options.map((op,i)=>`<button class="option" onclick="answer(${i})">${op}</button>`).join("")}
+  `;
+}
+function answer(i){
+  total += questions[current].scores[i];
+  current++;
+  renderQuestion();
+  document.getElementById("score").textContent=total+"/15";
+}
+function finishQuiz(){
+  let title="", text="";
+  if(total<=5){
+    title="Cần bắt đầu";
+    text="Bạn nên dành thời gian tìm hiểu ngành học, nghề nghiệp và xây dựng những thói quen nghề nghiệp cơ bản.";
+  }else if(total<=9){
+    title="Đang hình thành";
+    text="Bạn đã có một số nền tảng. Hãy tăng trải nghiệm thực tế và chủ động phát triển kỹ năng.";
+  }else if(total<=12){
+    title="Khá tốt";
+    text="Bạn đã có mức độ chủ động khá tốt. Hãy tiếp tục biến kế hoạch thành sản phẩm, dự án và trải nghiệm thực tế.";
+  }else{
+    title="Sẵn sàng tốt";
+    text="Bạn đang thể hiện nhiều hành vi tích cực của ý thức nghề nghiệp. Hãy duy trì việc học tập suốt đời và khả năng thích nghi.";
+  }
+  document.getElementById("quizBox").innerHTML=`
+    <h3 style="margin-top:0">Đã hoàn thành!</h3>
+    <p>Bạn đạt <b>${total}/15 điểm</b>.</p>
+    <button class="btn btn-primary" onclick="current=0;total=0;document.getElementById('score').textContent='0/15';document.getElementById('resultText').textContent='Chưa có kết quả.';renderQuestion()">Làm lại</button>
+  `;
+  document.getElementById("resultText").innerHTML=`<b>${title}</b><br>${text}`;
+}
+renderQuestion();
+
+const backTop=document.getElementById("backTop");
+window.addEventListener("scroll",()=>{
+  backTop.classList.toggle("show",window.scrollY>500);
+});
+backTop.addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"}));
+</script>
+
+</body>
+</html>
