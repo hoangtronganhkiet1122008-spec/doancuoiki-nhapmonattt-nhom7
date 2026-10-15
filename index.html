@@ -627,6 +627,32 @@ main>section:has(.card[style*="text-align:center"]) .card[style*="text-align:cen
     letter-spacing: 1.6px;
     font-weight: 600;
 }
+.video-survey {
+    margin: 30px 0;
+    padding: 25px;
+    background: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.video-survey h3 {
+    margin: 0 0 6px;
+    color: #234a87;
+    font-size: 24px;
+}
+
+.video-survey p {
+    margin-bottom: 18px;
+    color: #64748b;
+    font-size: 14px;
+}
+
+.video-survey iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: none;
+    border-radius: 12px;
+}
 </style>
 </head>
 <body>
@@ -949,7 +975,6 @@ main>section:has(.card[style*="text-align:center"]) .card[style*="text-align:cen
         </div>
       </div>
     </section>
-
     <section id="khaosat">
       <div class="container">
         <div class="section-head">
@@ -958,6 +983,16 @@ main>section:has(.card[style*="text-align:center"]) .card[style*="text-align:cen
           <p>Số liệu được đồng bộ từ Google Sheets và tự kiểm tra cập nhật định kỳ. Chọn từng câu hỏi để xem kết quả khảo sát.</p>
         </div>
         <div class="survey-kpis">
+          <div class="video-survey">
+          <h3>Video khảo sát thực tế</h3>
+          <p>Ý thức của sinh viên hiện nay</p>
+
+          <iframe
+            src="https://drive.google.com/file/d/1-ggGBly707xHm2LJOsByNrVctoAZqMWe/view?usp=drivesdk"
+            allow="autoplay"
+            allowfullscreen>
+          </iframe>
+        </div>
           <div class="survey-kpi"><span>TỔNG PHẢN HỒI</span><strong id="kpiResponses">122</strong><small id="kpiResponsesNote">Dữ liệu hiện có</small></div>
           <div class="survey-kpi"><span>SỐ CÂU HỎI</span><strong id="kpiQuestions">20</strong><small>Được thống kê</small></div>
           <div class="survey-kpi"><span>ĐỘ TUỔI PHỔ BIẾN</span><strong id="kpiAge">18 tuổi</strong><small id="kpiAgeNote">87,7% số phản hồi</small></div>
