@@ -695,6 +695,37 @@ main>section:has(.card[style*="text-align:center"]) .card[style*="text-align:cen
         aspect-ratio: 16 / 9;
     }
 }
+    #video-khaosat .container {
+    width: 100%;
+    max-width: none;
+    padding: 0 clamp(12px, 3vw, 48px);
+    margin: 0 auto;
+}
+
+#video-khaosat .video-survey {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#video-khaosat .video-frame {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+}
+
+#video-khaosat .video-frame iframe {
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width: 620px) {
+    #video-khaosat .container {
+        padding: 0 10px;
+    }
+
+    #video-khaosat .video-survey {
+        padding: 12px;
+    }
+}
 </style>
 </head>
 <body>
@@ -1025,15 +1056,6 @@ main>section:has(.card[style*="text-align:center"]) .card[style*="text-align:cen
           <p>Số liệu được đồng bộ từ Google Sheets và tự kiểm tra cập nhật định kỳ. Chọn từng câu hỏi để xem kết quả khảo sát.</p>
         </div>
         <div class="survey-kpis">
-          <div class="video-frame">
-            <iframe
-                   src="https://drive.google.com/file/d/1-ggGBly707xHm2LJOsByNrVctoAZqMWe/preview"
-                   title="Video khảo sát thực tế"
-                   allow="autoplay; encrypted-media; picture-in-picture"
-                   allowfullscreen
-                   loading="lazy">
-              </iframe>
-          </div>
           <div class="survey-kpi"><span>TỔNG PHẢN HỒI</span><strong id="kpiResponses">122</strong><small id="kpiResponsesNote">Dữ liệu hiện có</small></div>
           <div class="survey-kpi"><span>SỐ CÂU HỎI</span><strong id="kpiQuestions">20</strong><small>Được thống kê</small></div>
           <div class="survey-kpi"><span>ĐỘ TUỔI PHỔ BIẾN</span><strong id="kpiAge">18 tuổi</strong><small id="kpiAgeNote">87,7% số phản hồi</small></div>
@@ -1068,12 +1090,14 @@ main>section:has(.card[style*="text-align:center"]) .card[style*="text-align:cen
         <div class="video-survey">
           <h3>Video khảo sát thực tế</h3>
           <p>Ý thức của sinh viên hiện nay</p>
-
-          <iframe
-            src="https://drive.google.com/file/d/1-ggGBly707xHm2LJOsByNrVctoAZqMWe/preview"
-            allow="autoplay"
-            allowfullscreen>
-          </iframe>
+          <div class="video-frame">
+            <iframe
+        src="https://drive.google.com/file/d/1-ggGBly707xHm2LJOsByNrVctoAZqMWe/preview"
+        title="Video khảo sát thực tế"
+        allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
+        allowfullscreen
+        loading="lazy">
+            </iframe>
         </div>
       </div>
     </section>
