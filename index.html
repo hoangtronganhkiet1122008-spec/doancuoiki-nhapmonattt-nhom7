@@ -654,11 +654,46 @@ main>section:has(.card[style*="text-align:center"]) .card[style*="text-align:cen
     font-size: 14px;
 }
 
-.video-survey iframe {
+.video-survey {
+    width: 100%;
+    min-width: 0;
+    margin: 30px 0;
+    padding: 25px;
+    background: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.video-frame {
+    position: relative;
     width: 100%;
     aspect-ratio: 16 / 9;
-    border: none;
+    overflow: hidden;
     border-radius: 12px;
+    background: #000;
+}
+
+.video-frame iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+@media (max-width: 620px) {
+    .video-survey {
+        padding: 15px;
+        margin: 20px 0;
+    }
+
+    .video-survey h3 {
+        font-size: 20px;
+    }
+
+    .video-frame {
+        aspect-ratio: 16 / 9;
+    }
 }
 </style>
 </head>
@@ -990,6 +1025,15 @@ main>section:has(.card[style*="text-align:center"]) .card[style*="text-align:cen
           <p>Số liệu được đồng bộ từ Google Sheets và tự kiểm tra cập nhật định kỳ. Chọn từng câu hỏi để xem kết quả khảo sát.</p>
         </div>
         <div class="survey-kpis">
+          <div class="video-frame">
+            <iframe
+                   src="https://drive.google.com/file/d/1-ggGBly707xHm2LJOsByNrVctoAZqMWe/preview"
+                   title="Video khảo sát thực tế"
+                   allow="autoplay; encrypted-media; picture-in-picture"
+                   allowfullscreen
+                   loading="lazy">
+              </iframe>
+          </div>
           <div class="survey-kpi"><span>TỔNG PHẢN HỒI</span><strong id="kpiResponses">122</strong><small id="kpiResponsesNote">Dữ liệu hiện có</small></div>
           <div class="survey-kpi"><span>SỐ CÂU HỎI</span><strong id="kpiQuestions">20</strong><small>Được thống kê</small></div>
           <div class="survey-kpi"><span>ĐỘ TUỔI PHỔ BIẾN</span><strong id="kpiAge">18 tuổi</strong><small id="kpiAgeNote">87,7% số phản hồi</small></div>
